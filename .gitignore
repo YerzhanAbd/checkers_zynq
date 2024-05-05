@@ -51,6 +51,8 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-# Vivado log files
+# Vivado junk(?) files
 *.log
 *.jou
+*.xml
+*.str

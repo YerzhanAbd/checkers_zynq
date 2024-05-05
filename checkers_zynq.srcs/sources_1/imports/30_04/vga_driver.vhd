@@ -8,6 +8,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.all;
 use work.boardPckg.all;
+use work.legalMovesPckg.all;
 
 entity vga_driver is
 
@@ -18,7 +19,8 @@ entity vga_driver is
         white_pieces: IN board;
         black_pieces: IN board;
         MOVE_X, MOVE_Y : IN INTEGER;
-        CHOSEN_X, CHOSEN_Y : IN INTEGER
+        CHOSEN_X, CHOSEN_Y : IN INTEGER;
+        legal_moves : IN legalMoves
     ); 
 end vga_driver; 
 
@@ -80,7 +82,7 @@ begin
             then if(hcount = H_TOTAL) then 
                 hcount<= 0; 
             else 
-                hcount <= hcount + 1; 
+                hcount <= hcount + 1;   
             end if; 
         end if; 
     end process hcount_proc;    
@@ -111,8 +113,23 @@ begin
                 SQUARE_COLOR <= 0;
             end if;
         end if;
+        if X_COORD = legal_moves(0,0) and Y_COORD = legal_moves(0,1) then
+            SQUARE_COLOR <= 4;
+        end if;
+        if X_COORD = legal_moves(1,0) and Y_COORD = legal_moves(1,1) then
+            SQUARE_COLOR <= 4;
+        end if;
+        if X_COORD = legal_moves(2,0) and Y_COORD = legal_moves(2,1) then
+            SQUARE_COLOR <= 4;
+        end if;
+        if X_COORD = legal_moves(3,0) and Y_COORD = legal_moves(3,1) then
+            SQUARE_COLOR <= 4;
+        end if;
         if (X_COORD = CHOSEN_X and Y_COORD = CHOSEN_Y) then
             SQUARE_COLOR <= 3;
+        end if;
+        if (X_COORD = MOVE_X and Y_COORD = MOVE_Y) then
+            SQUARE_COLOR <= 2;
         end if;
     end process square_color_proc;
     hsync_gen_proc: process(hcount)
@@ -170,7 +187,11 @@ begin
                                 elsif SQUARE_COLOR = 3 then
                                     red <= "0000"; 
                                     green <= "0000"; 
-                                    blue <= "1100"; 
+                                    blue <= "1100";
+                                elsif SQUARE_COLOR = 4 then
+                                    red <= "1101"; 
+                                    green <= "0000"; 
+                                    blue <= "0000"; 
                                 else
                                     -- yellow squares
                                     red <= "0100"; 
@@ -192,7 +213,11 @@ begin
                             elsif SQUARE_COLOR = 3 then
                                 red <= "0000"; 
                                 green <= "0000"; 
-                                blue <= "1100"; 
+                                blue <= "1100";
+                            elsif SQUARE_COLOR = 4 then
+                                red <= "1101"; 
+                                green <= "0000"; 
+                                blue <= "0000"; 
                             else
                                 -- yellow squares
                                 red <= "0100"; 

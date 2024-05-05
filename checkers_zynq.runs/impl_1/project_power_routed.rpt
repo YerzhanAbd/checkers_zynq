@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date             : Sun May  5 16:08:56 2024
+| Date             : Mon May  6 02:09:46 2024
 | Host             : t running 64-bit major release  (build 9200)
 | Command          : report_power -file project_power_routed.rpt -pb project_power_summary_routed.pb -rpx project_power_routed.rpx
 | Design           : project
@@ -36,8 +36,8 @@ Table of Contents
 | Dynamic (W)              | 0.011        |
 | Device Static (W)        | 0.106        |
 | Effective TJA (C/W)      | 11.5         |
-| Max Ambient (C)          | 83.7         |
-| Junction Temperature (C) | 26.3         |
+| Max Ambient (C)          | 83.6         |
+| Junction Temperature (C) | 26.4         |
 | Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.004 |     4731 |       --- |             --- |
-|   LUT as Logic |     0.004 |     2902 |     53200 |            5.45 |
-|   CARRY4       |    <0.001 |      517 |     13300 |            3.89 |
-|   Register     |    <0.001 |      522 |    106400 |            0.49 |
-|   F7/F8 Muxes  |    <0.001 |       48 |     53200 |            0.09 |
+| Slice Logic    |     0.005 |     5961 |       --- |             --- |
+|   LUT as Logic |     0.004 |     3750 |     53200 |            7.05 |
+|   CARRY4       |    <0.001 |      621 |     13300 |            4.67 |
+|   Register     |    <0.001 |      779 |    106400 |            0.73 |
+|   F7/F8 Muxes  |    <0.001 |       82 |     53200 |            0.15 |
 |   Others       |     0.000 |       12 |       --- |             --- |
 |   BUFG         |     0.000 |        2 |        32 |            6.25 |
-| Signals        |     0.004 |     3581 |       --- |             --- |
+| Signals        |     0.004 |     4507 |       --- |             --- |
 | I/O            |    <0.001 |       37 |       200 |           18.50 |
 | Static Power   |     0.106 |          |           |                 |
 | Total          |     0.117 |          |           |                 |

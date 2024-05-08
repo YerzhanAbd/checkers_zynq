@@ -1,8 +1,8 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Tue May  7 17:57:02 2024
-| Host         : 102-010 running 64-bit major release  (build 9200)
+| Date         : Wed May  8 22:27:52 2024
+| Host         : LAPTOP-7GF0693T running 64-bit major release  (build 9200)
 | Command      : report_methodology -file project_methodology_drc_routed.rpt -pb project_methodology_drc_routed.pb -rpx project_methodology_drc_routed.rpx
 | Design       : project
 | Device       : xc7z020clg484-1
@@ -525,67 +525,67 @@ Related violations: <none>
 
 TIMING-17#99 Critical Warning
 Non-clocked sequential cell  
-The clock pin MOVE_Y_reg[10]/C is not reached by a timing clock
+The clock pin MOVE_Y_reg[0]_rep__0/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#100 Critical Warning
 Non-clocked sequential cell  
-The clock pin MOVE_Y_reg[11]/C is not reached by a timing clock
+The clock pin MOVE_Y_reg[10]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#101 Critical Warning
 Non-clocked sequential cell  
-The clock pin MOVE_Y_reg[12]/C is not reached by a timing clock
+The clock pin MOVE_Y_reg[11]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#102 Critical Warning
 Non-clocked sequential cell  
-The clock pin MOVE_Y_reg[13]/C is not reached by a timing clock
+The clock pin MOVE_Y_reg[12]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#103 Critical Warning
 Non-clocked sequential cell  
-The clock pin MOVE_Y_reg[14]/C is not reached by a timing clock
+The clock pin MOVE_Y_reg[13]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#104 Critical Warning
 Non-clocked sequential cell  
-The clock pin MOVE_Y_reg[15]/C is not reached by a timing clock
+The clock pin MOVE_Y_reg[14]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#105 Critical Warning
 Non-clocked sequential cell  
-The clock pin MOVE_Y_reg[16]/C is not reached by a timing clock
+The clock pin MOVE_Y_reg[15]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#106 Critical Warning
 Non-clocked sequential cell  
-The clock pin MOVE_Y_reg[17]/C is not reached by a timing clock
+The clock pin MOVE_Y_reg[16]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#107 Critical Warning
 Non-clocked sequential cell  
-The clock pin MOVE_Y_reg[18]/C is not reached by a timing clock
+The clock pin MOVE_Y_reg[17]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#108 Critical Warning
 Non-clocked sequential cell  
-The clock pin MOVE_Y_reg[19]/C is not reached by a timing clock
+The clock pin MOVE_Y_reg[18]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#109 Critical Warning
 Non-clocked sequential cell  
-The clock pin MOVE_Y_reg[1]/C is not reached by a timing clock
+The clock pin MOVE_Y_reg[19]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#110 Critical Warning
 Non-clocked sequential cell  
-The clock pin MOVE_Y_reg[1]_rep/C is not reached by a timing clock
+The clock pin MOVE_Y_reg[1]/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#111 Critical Warning
 Non-clocked sequential cell  
-The clock pin MOVE_Y_reg[1]_rep__0/C is not reached by a timing clock
+The clock pin MOVE_Y_reg[1]_rep/C is not reached by a timing clock
 Related violations: <none>
 
 TIMING-17#112 Critical Warning

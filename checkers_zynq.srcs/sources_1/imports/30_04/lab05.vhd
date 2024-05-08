@@ -31,13 +31,6 @@ architecture Behavioral of project is
             clk_out: out std_logic ); 
     end component;
     
---    clk: in std_logic;        
---        hsync, vsync: out std_logic;        
---        red, green, blue : out std_logic_vector(3 downto 0);
---        BTNR : IN STD_LOGIC;
---        BTNU : IN STD_LOGIC;
---        BTND : IN STD_LOGIC;
---        BTNL : IN STD_LOGIC 
     component pmod_joystick is
       generic (
         clk_freq: integer
@@ -107,10 +100,10 @@ architecture Behavioral of project is
     signal MOVE_Y : integer := 0;
     signal BOARD_SIZE: integer := 7;
 
-   signal white_pieces : board := ("10101010", "01010101", "10101010", "00000000",
+   signal black_pieces : board := ("01010101", "10101010", "01010101", "00000000",
            "00000000","00000000","00000000","00000000");
-   signal black_pieces : board := ("00000000", "00000000", "00000000", "00000000",
-    "00000000","01010101","10101010","01010101");
+   signal white_pieces : board := ("00000000", "00000000", "00000000", "00000000",
+    "00000000","10101010","01010101","10101010");
     
    signal legal_moves : legalMoves := (
    -- (index: 1: y, index: 0: x)
@@ -120,7 +113,6 @@ architecture Behavioral of project is
     (-1,-1)  -- 0
     );
     
-    -- ((-1,-1),(-1,-1),(-1,-1),(-1,-1));
      
 begin
     get_coords: process(clk10Hz)

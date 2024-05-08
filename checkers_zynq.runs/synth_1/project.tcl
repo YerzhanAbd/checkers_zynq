@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/Student/Downloads/checkers_zynq-main/checkers_zynq.runs/synth_1/project.tcl"
+  variable script "C:/University/FPGA/checkers_zynq/checkers_zynq.runs/synth_1/project.tcl"
   variable category "vivado_synth"
 }
 
@@ -70,7 +70,7 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 6
+set_param chipscope.maxJobs 4
 set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg484-1
@@ -78,24 +78,22 @@ create_project -in_memory -part xc7z020clg484-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/Student/Downloads/checkers_zynq-main/checkers_zynq.cache/wt [current_project]
-set_property parent.project_path C:/Users/Student/Downloads/checkers_zynq-main/checkers_zynq.xpr [current_project]
+set_property webtalk.parent_dir C:/University/FPGA/checkers_zynq/checkers_zynq.cache/wt [current_project]
+set_property parent.project_path C:/University/FPGA/checkers_zynq/checkers_zynq.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property board_part_repo_paths {C:/Users/Student/AppData/Roaming/Xilinx/Vivado/2023.2/xhub/board_store/xilinx_board_store} [current_project]
-set_property board_part avnet.com:zedboard:part0:1.4 [current_project]
-set_property ip_output_repo c:/Users/Student/Downloads/checkers_zynq-main/checkers_zynq.cache/ip [current_project]
+set_property ip_output_repo c:/University/FPGA/checkers_zynq/checkers_zynq.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_vhdl -library xil_defaultlib {
-  C:/Users/Student/Downloads/checkers_zynq-main/checkers_zynq.srcs/sources_1/imports/30_04/board.vhd
-  C:/Users/Student/Downloads/checkers_zynq-main/checkers_zynq.srcs/sources_1/imports/30_04/clock_divider.vhd
-  C:/Users/Student/Downloads/checkers_zynq-main/checkers_zynq.srcs/sources_1/imports/30_04/pmod_joystick.vhd
-  C:/Users/Student/Downloads/checkers_zynq-main/checkers_zynq.srcs/sources_1/imports/30_04/spi_master.vhd
-  C:/Users/Student/Downloads/checkers_zynq-main/checkers_zynq.srcs/sources_1/new/ssd_ctrl.vhd
-  C:/Users/Student/Downloads/checkers_zynq-main/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd
-  C:/Users/Student/Downloads/checkers_zynq-main/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd
+  C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/board.vhd
+  C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/clock_divider.vhd
+  C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/pmod_joystick.vhd
+  C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/spi_master.vhd
+  C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/new/ssd_ctrl.vhd
+  C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd
+  C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -106,12 +104,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/Student/Downloads/checkers_zynq-main/checkers_zynq.srcs/constrs_1/imports/30_04/lab05.xdc
-set_property used_in_implementation false [get_files C:/Users/Student/Downloads/checkers_zynq-main/checkers_zynq.srcs/constrs_1/imports/30_04/lab05.xdc]
+read_xdc C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/constrs_1/imports/30_04/lab05.xdc
+set_property used_in_implementation false [get_files C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/constrs_1/imports/30_04/lab05.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental C:/Users/Student/Downloads/checkers_zynq-main/checkers_zynq.srcs/utils_1/imports/synth_1/project.dcp
+read_checkpoint -auto_incremental -incremental C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/utils_1/imports/synth_1/project.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

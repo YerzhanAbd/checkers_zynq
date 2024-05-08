@@ -104,14 +104,11 @@ begin
     begin
         X_COORD <= (hcount - H_INNER_TOP_LEFT) / 50;
         Y_COORD <= (vcount - V_INNER_TOP_LEFT) / 50;
-        if (X_COORD = MOVE_X and Y_COORD = MOVE_Y) then
-            SQUARE_COLOR <= 2;
+        
+        if (square_colors(Y_COORD, X_COORD) = '1') then
+            SQUARE_COLOR <= 1;
         else
-            if (square_colors(Y_COORD, X_COORD) = '1') then
-                SQUARE_COLOR <= 1;
-            else
-                SQUARE_COLOR <= 0;
-            end if;
+            SQUARE_COLOR <= 0;
         end if;
         if X_COORD = legal_moves(0,0) and Y_COORD = legal_moves(0,1) then
             SQUARE_COLOR <= 4;
@@ -175,10 +172,10 @@ begin
                                 blue <= "0000";
                             else
                                 if (SQUARE_COLOR = 1) then
-                                    -- brown squares
-                                    red <= "1100"; 
-                                    green <= "1011"; 
-                                    blue <= "0010"; 
+                                     -- brown squares
+                                    red <= "0100"; 
+                                    green <= "0001"; 
+                                    blue <= "0000";
                                 elsif (SQUARE_COLOR = 2) then
                                     -- green select square
                                     red <= "0000"; 
@@ -194,17 +191,17 @@ begin
                                     blue <= "0000"; 
                                 else
                                     -- yellow squares
-                                    red <= "0100"; 
-                                    green <= "0001"; 
-                                    blue <= "0000";
+                                    red <= "1100"; 
+                                    green <= "1011"; 
+                                    blue <= "0010";
                                 end if;  
                             end if;
                         else
                             if (SQUARE_COLOR = 1) then
                                 -- brown squares
-                                red <= "1100"; 
-                                green <= "1011"; 
-                                blue <= "0010"; 
+                                    red <= "0100"; 
+                                    green <= "0001"; 
+                                    blue <= "0000";
                             elsif (SQUARE_COLOR = 2) then
                                 -- green select square
                                 red <= "0000"; 
@@ -220,9 +217,9 @@ begin
                                 blue <= "0000"; 
                             else
                                 -- yellow squares
-                                red <= "0100"; 
-                                green <= "0001"; 
-                                blue <= "0000";
+                                    red <= "1100"; 
+                                    green <= "1011"; 
+                                    blue <= "0010";
                             end if;
                         end if;                      
                     end if;

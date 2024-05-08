@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1714932379" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/project.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1715075710" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/project.dcp">
   <File Type="PA-TCL" Name="project.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="project_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="project_reports.tcl"/>
@@ -39,6 +39,12 @@
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../30_04/spi_master.vhd"/>
         <Attr Name="ImportTime" Val="1714464862"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ssd_ctrl.vhd">
+      <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>

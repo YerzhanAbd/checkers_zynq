@@ -68,6 +68,15 @@ architecture Behavioral of project is
         ); 
     end component;
     
+    component ssd_ctrl is
+        port (
+            clk: in std_logic;
+            switch: in std_logic_vector ( 7 downto 0 );
+            sel: buffer std_logic := '0';
+            ssd: out std_logic_vector ( 6 downto 0 )
+        );
+    end component;
+    
     signal reset_n: std_logic:='1';
     signal x_position      : STD_LOGIC_VECTOR(7 DOWNTO 0);
     signal y_position      : STD_LOGIC_VECTOR(7 DOWNTO 0);
@@ -82,6 +91,10 @@ architecture Behavioral of project is
     
     signal X_COORD: integer := 0;
     signal Y_COORD: integer := 0;
+    signal X_COORD_VEC: std_logic_vector(3 downto 0);
+    signal Y_COORD_VEC: std_logic_vector(3 downto 0);
+    signal COORD_VEC: std_logic_vector(7 downto 0);
+    
     
     signal CHOSEN_X: integer := -1;
     signal CHOSEN_Y: integer := -1;
@@ -110,6 +123,14 @@ architecture Behavioral of project is
     -- ((-1,-1),(-1,-1),(-1,-1),(-1,-1));
      
 begin
+    get_coords: process(clk10Hz)
+    begin
+        X_COORD_VEC <= std_logic_vector(TO_UNSIGNED(X_COORD, 4));
+        Y_COORD_VEC <= std_logic_vector(TO_UNSIGNED(Y_COORD, 4));
+        COORD_VEC (7 downto 4) <= X_COORD_VEC; 
+        COORD_VEC (3 downto 0) <= Y_COORD_VEC; 
+    end process get_coords;
+    comp_ssd_ctrl : ssd_ctrl port map (clk => clk, switch => COORD_VEC, sel => sel, ssd => ssd); 
     joystick_test: pmod_joystick
         generic map ( clk_freq => 100)
         port map (

@@ -238,3 +238,18 @@
     <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="7016" HostCore="16" HostMemory="016354070528">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="40688" HostCore="16" HostMemory="016354070528">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="8508" HostCore="16" HostMemory="016354070528">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="10368" HostCore="16" HostMemory="016354070528">
+    </Process>
+</ProcessHandle>

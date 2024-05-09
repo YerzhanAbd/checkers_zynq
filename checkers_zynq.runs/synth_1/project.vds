@@ -3,8 +3,8 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Thu May  9 16:19:44 2024
-# Process ID: 31936
+# Start of session at: Thu May  9 16:42:51 2024
+# Process ID: 32428
 # Current directory: C:/University/FPGA/checkers_zynq/checkers_zynq.runs/synth_1
 # Command line: vivado.exe -log project.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source project.tcl
 # Log file: C:/University/FPGA/checkers_zynq/checkers_zynq.runs/synth_1/project.vds
@@ -24,9 +24,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 40216
+INFO: [Synth 8-7075] Helper process launched with PID 37144
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1430.223 ; gain = 439.977
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1430.992 ; gain = 439.535
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'project' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:28]
 WARNING: [Synth 8-614] signal 'STATE' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:140]
@@ -103,18 +103,18 @@ INFO: [Synth 8-256] done synthesizing module 'project' (0#1) [C:/University/FPGA
 WARNING: [Synth 8-7129] Port BTNU in module project is either unconnected or has no load
 WARNING: [Synth 8-7129] Port BTND in module project is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1891.125 ; gain = 900.879
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1852.359 ; gain = 860.902
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1891.125 ; gain = 900.879
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1852.359 ; gain = 860.902
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1891.125 ; gain = 900.879
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1852.359 ; gain = 860.902
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.639 . Memory (MB): peak = 1891.125 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.390 . Memory (MB): peak = 1852.359 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -139,28 +139,28 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/project_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 2020.789 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1953.938 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.069 . Memory (MB): peak = 2020.789 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.065 . Memory (MB): peak = 1953.938 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2020.789 ; gain = 1030.543
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1953.938 ; gain = 962.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2020.789 ; gain = 1030.543
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1953.938 ; gain = 962.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:27 . Memory (MB): peak = 2020.789 ; gain = 1030.543
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1953.938 ; gain = 962.480
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'pmod_joystick'
 ---------------------------------------------------------------------------------------------------
@@ -174,7 +174,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'pmod_
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'pmod_joystick'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:47 ; elapsed = 00:00:51 . Memory (MB): peak = 2020.789 ; gain = 1030.543
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 1953.938 ; gain = 962.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -199,7 +199,7 @@ Detailed RTL Component Info :
 +---Multipliers : 
 	               7x32  Multipliers := 2     
 +---Muxes : 
-	   2 Input   32 Bit        Muxes := 1098  
+	   2 Input   32 Bit        Muxes := 15    
 	   5 Input   32 Bit        Muxes := 3     
 	   2 Input   31 Bit        Muxes := 2     
 	   2 Input   24 Bit        Muxes := 4     
@@ -208,19 +208,18 @@ Detailed RTL Component Info :
 	   5 Input   18 Bit        Muxes := 1     
 	   2 Input    8 Bit        Muxes := 3     
 	   5 Input    6 Bit        Muxes := 1     
-	   2 Input    6 Bit        Muxes := 64    
-	   2 Input    5 Bit        Muxes := 67    
+	   2 Input    5 Bit        Muxes := 3     
 	   5 Input    4 Bit        Muxes := 2     
-	   2 Input    4 Bit        Muxes := 86    
+	   2 Input    4 Bit        Muxes := 22    
 	   3 Input    4 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 70    
+	   2 Input    3 Bit        Muxes := 6     
 	   5 Input    3 Bit        Muxes := 1     
-	   2 Input    2 Bit        Muxes := 12    
+	   2 Input    2 Bit        Muxes := 4     
 	   4 Input    2 Bit        Muxes := 1     
 	   8 Input    1 Bit        Muxes := 3     
-	   2 Input    1 Bit        Muxes := 8883  
-	   5 Input    1 Bit        Muxes := 7     
+	   2 Input    1 Bit        Muxes := 9159  
 	   3 Input    1 Bit        Muxes := 1     
+	   5 Input    1 Bit        Muxes := 7     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -236,240 +235,408 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 WARNING: [Synth 8-7129] Port BTNU in module project is either unconnected or has no load
 WARNING: [Synth 8-7129] Port BTND in module project is either unconnected or has no load
-INFO: [Synth 8-5545] ROM "p_0_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "p_0_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "p_0_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "p_0_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][17] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][17] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][18] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][18] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][19] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][19] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][20] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][20] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][21] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][21] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][22] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][22] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][23] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][23] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][24] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][24] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][25] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][25] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][26] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][26] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][27] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][27] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][28] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][28] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][29] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][29] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][30] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][30] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,4][31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,4][31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][4] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][5] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][6] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][7] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][8] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][9] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][10] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][11] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][12] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][13] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][14] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][15] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][16] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][17] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][18] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][19] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][20] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][21] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][22] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][23] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][24] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][25] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][26] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][27] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][28] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][29] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][30] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\black_pieces_reg[5,3][31] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,2][1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,2][1] )
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][1]' (FDRE) to 'white_pieces_reg[5,1][2]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][1]' (FDRE) to 'white_pieces_reg[2,1][2]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][1]' (FDRE) to 'white_pieces_reg[1,1][2]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,2][2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,2][2] )
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][2]' (FDRE) to 'white_pieces_reg[5,1][3]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][2]' (FDRE) to 'white_pieces_reg[2,1][3]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][2]' (FDRE) to 'white_pieces_reg[1,1][3]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,2][3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[0,2][3] )
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][3]' (FDRE) to 'white_pieces_reg[5,1][4]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][3]' (FDRE) to 'white_pieces_reg[2,1][4]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][3]' (FDRE) to 'white_pieces_reg[1,1][4]'
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (\white_pieces_reg[1,2][4] )
-INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][4]' (FDRE) to 'white_pieces_reg[5,1][5]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][4]' (FDRE) to 'white_pieces_reg[2,1][5]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][4]' (FDRE) to 'white_pieces_reg[1,1][5]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][5]' (FDRE) to 'white_pieces_reg[5,1][6]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][5]' (FDRE) to 'white_pieces_reg[2,1][6]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][5]' (FDRE) to 'white_pieces_reg[1,1][6]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][6]' (FDRE) to 'white_pieces_reg[5,1][7]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][6]' (FDRE) to 'white_pieces_reg[2,1][7]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][6]' (FDRE) to 'white_pieces_reg[1,1][7]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][7]' (FDRE) to 'white_pieces_reg[5,1][8]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][7]' (FDRE) to 'white_pieces_reg[2,1][8]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][7]' (FDRE) to 'white_pieces_reg[1,1][8]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][8]' (FDRE) to 'white_pieces_reg[5,1][9]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][8]' (FDRE) to 'white_pieces_reg[2,1][9]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][8]' (FDRE) to 'white_pieces_reg[1,1][9]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][9]' (FDRE) to 'white_pieces_reg[5,1][10]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][9]' (FDRE) to 'white_pieces_reg[2,1][10]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][9]' (FDRE) to 'white_pieces_reg[1,1][10]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][10]' (FDRE) to 'white_pieces_reg[5,1][11]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][10]' (FDRE) to 'white_pieces_reg[2,1][11]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][10]' (FDRE) to 'white_pieces_reg[1,1][11]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][11]' (FDRE) to 'white_pieces_reg[5,1][12]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][11]' (FDRE) to 'white_pieces_reg[2,1][12]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][11]' (FDRE) to 'white_pieces_reg[1,1][12]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][12]' (FDRE) to 'white_pieces_reg[5,1][13]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][12]' (FDRE) to 'white_pieces_reg[2,1][13]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][12]' (FDRE) to 'white_pieces_reg[1,1][13]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][13]' (FDRE) to 'white_pieces_reg[5,1][14]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][13]' (FDRE) to 'white_pieces_reg[2,1][14]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][13]' (FDRE) to 'white_pieces_reg[1,1][14]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][14]' (FDRE) to 'white_pieces_reg[5,1][15]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][14]' (FDRE) to 'white_pieces_reg[2,1][15]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][14]' (FDRE) to 'white_pieces_reg[1,1][15]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][15]' (FDRE) to 'white_pieces_reg[5,1][16]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][15]' (FDRE) to 'white_pieces_reg[2,1][16]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][15]' (FDRE) to 'white_pieces_reg[1,1][16]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][16]' (FDRE) to 'white_pieces_reg[5,1][17]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][16]' (FDRE) to 'white_pieces_reg[2,1][17]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][16]' (FDRE) to 'white_pieces_reg[1,1][17]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][17]' (FDRE) to 'white_pieces_reg[5,1][18]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][17]' (FDRE) to 'white_pieces_reg[2,1][18]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][17]' (FDRE) to 'white_pieces_reg[1,1][18]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][18]' (FDRE) to 'white_pieces_reg[5,1][19]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][18]' (FDRE) to 'white_pieces_reg[2,1][19]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][18]' (FDRE) to 'white_pieces_reg[1,1][19]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][19]' (FDRE) to 'white_pieces_reg[5,1][20]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][19]' (FDRE) to 'white_pieces_reg[2,1][20]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][19]' (FDRE) to 'white_pieces_reg[1,1][20]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][20]' (FDRE) to 'white_pieces_reg[5,1][21]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][20]' (FDRE) to 'white_pieces_reg[2,1][21]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][20]' (FDRE) to 'white_pieces_reg[1,1][21]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][21]' (FDRE) to 'white_pieces_reg[5,1][22]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][21]' (FDRE) to 'white_pieces_reg[2,1][22]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][21]' (FDRE) to 'white_pieces_reg[1,1][22]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][22]' (FDRE) to 'white_pieces_reg[5,1][23]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][22]' (FDRE) to 'white_pieces_reg[2,1][23]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][22]' (FDRE) to 'white_pieces_reg[1,1][23]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][23]' (FDRE) to 'white_pieces_reg[5,1][24]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][23]' (FDRE) to 'white_pieces_reg[2,1][24]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][23]' (FDRE) to 'white_pieces_reg[1,1][24]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][24]' (FDRE) to 'white_pieces_reg[5,1][25]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][24]' (FDRE) to 'white_pieces_reg[2,1][25]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][24]' (FDRE) to 'white_pieces_reg[1,1][25]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][25]' (FDRE) to 'white_pieces_reg[5,1][26]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][25]' (FDRE) to 'white_pieces_reg[2,1][26]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][25]' (FDRE) to 'white_pieces_reg[1,1][26]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][26]' (FDRE) to 'white_pieces_reg[5,1][27]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][26]' (FDRE) to 'white_pieces_reg[2,1][27]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][26]' (FDRE) to 'white_pieces_reg[1,1][27]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][27]' (FDRE) to 'white_pieces_reg[5,1][28]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][27]' (FDRE) to 'white_pieces_reg[2,1][28]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][27]' (FDRE) to 'white_pieces_reg[1,1][28]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][28]' (FDRE) to 'white_pieces_reg[5,1][29]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][28]' (FDRE) to 'white_pieces_reg[2,1][29]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][28]' (FDRE) to 'white_pieces_reg[1,1][29]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][29]' (FDRE) to 'white_pieces_reg[5,1][30]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][29]' (FDRE) to 'white_pieces_reg[2,1][30]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][29]' (FDRE) to 'white_pieces_reg[1,1][30]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[5,1][30]' (FDRE) to 'white_pieces_reg[5,1][31]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[2,1][30]' (FDRE) to 'white_pieces_reg[2,1][31]'
-INFO: [Synth 8-3886] merging instance 'white_pieces_reg[1,1][30]' (FDRE) to 'white_pieces_reg[1,1][31]'
-INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-3886] merging instance 'black_pieces_reg[3,1][1]' (FDRE) to 'black_pieces_reg[3,1][2]'
-INFO: [Synth 8-3886] merging instance 'black_pieces_reg[3,1][2]' (FDRE) to 'black_pieces_reg[3,1][3]'
-INFO: [Synth 8-3886] merging instance 'black_pieces_reg[3,1][3]' (FDRE) to 'black_pieces_reg[3,1][4]'
-INFO: [Synth 8-3886] merging instance 'black_pieces_reg[3,1][4]' (FDRE) to 'black_pieces_reg[3,1][5]'
-INFO: [Synth 8-3886] merging instance 'black_pieces_reg[3,1][5]' (FDRE) to 'black_pieces_reg[3,1][6]'
-INFO: [Synth 8-3886] merging instance 'black_pieces_reg[3,1][6]' (FDRE) to 'black_pieces_reg[3,1][7]'
-INFO: [Synth 8-3886] merging instance 'black_pieces_reg[3,1][7]' (FDRE) to 'black_pieces_reg[3,1][8]'
-INFO: [Synth 8-3886] merging instance 'black_pieces_reg[3,1][8]' (FDRE) to 'black_pieces_reg[3,1][9]'
-INFO: [Synth 8-3886] merging instance 'black_pieces_reg[3,1][9]' (FDRE) to 'black_pieces_reg[3,1][10]'
-INFO: [Synth 8-3886] merging instance 'black_pieces_reg[3,1][10]' (FDRE) to 'black_pieces_reg[3,1][11]'
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-5544] ROM "ssd" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
-INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:49 ; elapsed = 00:02:05 . Memory (MB): peak = 2020.789 ; gain = 1030.543
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:28 ; elapsed = 00:01:37 . Memory (MB): peak = 1953.938 ; gain = 962.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:53 ; elapsed = 00:02:09 . Memory (MB): peak = 2020.789 ; gain = 1030.543
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:32 ; elapsed = 00:01:41 . Memory (MB): peak = 1953.938 ; gain = 962.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:55 ; elapsed = 00:02:11 . Memory (MB): peak = 2020.789 ; gain = 1030.543
+Finished Timing Optimization : Time (s): cpu = 00:01:34 ; elapsed = 00:01:44 . Memory (MB): peak = 1953.938 ; gain = 962.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5838 -from S[1] -to O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5838 -from S[2] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5839 -from S[0] -to O[0]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5839 -from S[1] -to O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5839 -from S[2] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5839 -from S[3] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5840 -from S[0] -to O[0]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5840 -from S[1] -to O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5840 -from S[2] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5840 -from S[3] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5841 -from S[0] -to O[0]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5841 -from S[1] -to O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5841 -from S[2] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5841 -from S[3] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5842 -from S[0] -to O[0]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5842 -from S[1] -to O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5842 -from S[2] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5842 -from S[3] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5843 -from S[0] -to O[0]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5843 -from S[2] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5843 -from S[3] -to O[3]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5844 -from S[1] -to O[1]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5844 -from S[2] -to O[2]'
+WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5845 -from S[2] -to O[2]'
+Found timing loop:
+     0: i_16950/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16950/I0 (LUT2)
+     2: i_17207/O[0] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17207/S[0] (CARRY4)
+     4: i_16950/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16950"
+Found timing loop:
+     0: i_16589/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16589/I0 (LUT2)
+     2: i_17206/O[0] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17206/S[0] (CARRY4)
+     4: i_16589/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16589"
+Found timing loop:
+     0: i_16600/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16600/I0 (LUT2)
+     2: i_17205/O[0] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17205/S[0] (CARRY4)
+     4: i_16600/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16600"
+Found timing loop:
+     0: i_16590/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16590/I0 (LUT2)
+     2: i_17204/O[0] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17204/S[0] (CARRY4)
+     4: i_16590/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16590"
+Found timing loop:
+     0: i_16599/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16599/I0 (LUT2)
+     2: i_17203/O[0] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17203/S[0] (CARRY4)
+     4: i_16599/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16599"
+Found timing loop:
+     0: i_16573/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16573/I0 (LUT2)
+     2: i_17202/O[0] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17202/S[0] (CARRY4)
+     4: i_16573/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16573"
+Found timing loop:
+     0: i_14907/O (INV)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_14907/I (INV)
+     2: i_16581/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_16581/I0 (LUT2)
+     4: i_17201/O[0] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     5: i_17201/S[0] (CARRY4)
+     6: i_14907/O (INV)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I -to O i_14907"
+Found timing loop:
+     0: i_16577/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16577/I0 (LUT2)
+     2: i_17201/O[1] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17201/S[1] (CARRY4)
+     4: i_16577/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16577"
+Found timing loop:
+     0: i_16596/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16596/I0 (LUT2)
+     2: i_17201/O[2] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17201/S[2] (CARRY4)
+     4: i_16596/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16596"
+Found timing loop:
+     0: i_16952/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16952/I0 (LUT2)
+     2: i_17201/O[3] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17201/S[3] (CARRY4)
+     4: i_16952/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16952"
+Found timing loop:
+     0: i_16575/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16575/I0 (LUT2)
+     2: i_17202/O[1] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17202/S[1] (CARRY4)
+     4: i_16575/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16575"
+Found timing loop:
+     0: i_16584/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16584/I0 (LUT2)
+     2: i_17202/O[2] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17202/S[2] (CARRY4)
+     4: i_16584/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16584"
+Found timing loop:
+     0: i_16594/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16594/I0 (LUT2)
+     2: i_17202/O[3] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17202/S[3] (CARRY4)
+     4: i_16594/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16594"
+Found timing loop:
+     0: i_16601/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16601/I0 (LUT2)
+     2: i_17203/O[1] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17203/S[1] (CARRY4)
+     4: i_16601/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16601"
+Found timing loop:
+     0: i_16579/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16579/I0 (LUT2)
+     2: i_17203/O[2] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17203/S[2] (CARRY4)
+     4: i_16579/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16579"
+Found timing loop:
+     0: i_16574/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16574/I0 (LUT2)
+     2: i_17203/O[3] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17203/S[3] (CARRY4)
+     4: i_16574/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16574"
+Found timing loop:
+     0: i_16570/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16570/I0 (LUT2)
+     2: i_17204/O[1] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17204/S[1] (CARRY4)
+     4: i_16570/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16570"
+Found timing loop:
+     0: i_16591/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16591/I0 (LUT2)
+     2: i_17204/O[2] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17204/S[2] (CARRY4)
+     4: i_16591/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16591"
+Found timing loop:
+     0: i_16595/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16595/I0 (LUT2)
+     2: i_17204/O[3] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17204/S[3] (CARRY4)
+     4: i_16595/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16595"
+Found timing loop:
+     0: i_16568/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16568/I0 (LUT2)
+     2: i_17205/O[1] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17205/S[1] (CARRY4)
+     4: i_16568/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16568"
+Found timing loop:
+     0: i_16602/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16602/I0 (LUT2)
+     2: i_17205/O[2] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17205/S[2] (CARRY4)
+     4: i_16602/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16602"
+Found timing loop:
+     0: i_16585/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16585/I0 (LUT2)
+     2: i_17205/O[3] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17205/S[3] (CARRY4)
+     4: i_16585/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16585"
+Found timing loop:
+     0: i_16951/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16951/I0 (LUT2)
+     2: i_17206/O[1] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17206/S[1] (CARRY4)
+     4: i_16951/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16951"
+Found timing loop:
+     0: i_16571/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16571/I0 (LUT2)
+     2: i_17206/O[2] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17206/S[2] (CARRY4)
+     4: i_16571/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16571"
+Found timing loop:
+     0: i_16597/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16597/I0 (LUT2)
+     2: i_17206/O[3] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17206/S[3] (CARRY4)
+     4: i_16597/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16597"
+Found timing loop:
+     0: i_16586/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16586/I0 (LUT2)
+     2: i_17207/O[1] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17207/S[1] (CARRY4)
+     4: i_16586/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16586"
+Found timing loop:
+     0: i_17207/O[2] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_17207/S[2] (CARRY4)
+     2: i_16580/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_16580/I0 (LUT2)
+     4: i_17207/O[2] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from S[2] -to O[2] i_17207"
+Found timing loop:
+     0: i_16948/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16948/I0 (LUT2)
+     2: i_17208/O[0] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17208/S[0] (CARRY4)
+     4: i_16948/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16948"
+Found timing loop:
+     0: i_16949/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16949/I0 (LUT2)
+     2: i_17207/O[3] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17207/S[3] (CARRY4)
+     4: i_16949/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16949"
+Found timing loop:
+     0: i_16947/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16947/I0 (LUT2)
+     2: i_17208/O[1] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17208/S[1] (CARRY4)
+     4: i_16947/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16947"
+Found timing loop:
+     0: i_17208/O[2] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_17208/S[2] (CARRY4)
+     2: i_16588/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_16588/I0 (LUT2)
+     4: i_17208/O[2] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from S[2] -to O[2] i_17208"
+Found timing loop:
+     0: i_16946/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     1: i_16946/I0 (LUT2)
+     2: i_17208/O[3] (CARRY4)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+     3: i_17208/S[3] (CARRY4)
+     4: i_16946/O (LUT2)
+      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
+CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
+Inferred a: "set_disable_timing -from I0 -to O i_16946"
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:59 ; elapsed = 00:02:16 . Memory (MB): peak = 2020.789 ; gain = 1030.543
+Finished Technology Mapping : Time (s): cpu = 00:01:41 ; elapsed = 00:01:51 . Memory (MB): peak = 1953.938 ; gain = 962.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -487,37 +654,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:03 ; elapsed = 00:02:20 . Memory (MB): peak = 2020.789 ; gain = 1030.543
+Finished IO Insertion : Time (s): cpu = 00:01:46 ; elapsed = 00:01:56 . Memory (MB): peak = 1953.938 ; gain = 962.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:03 ; elapsed = 00:02:20 . Memory (MB): peak = 2020.789 ; gain = 1030.543
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:46 ; elapsed = 00:01:56 . Memory (MB): peak = 1953.938 ; gain = 962.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:03 ; elapsed = 00:02:20 . Memory (MB): peak = 2020.789 ; gain = 1030.543
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:47 ; elapsed = 00:01:57 . Memory (MB): peak = 1953.938 ; gain = 962.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:03 ; elapsed = 00:02:20 . Memory (MB): peak = 2020.789 ; gain = 1030.543
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:47 ; elapsed = 00:01:57 . Memory (MB): peak = 1953.938 ; gain = 962.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:03 ; elapsed = 00:02:20 . Memory (MB): peak = 2020.789 ; gain = 1030.543
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:47 ; elapsed = 00:01:57 . Memory (MB): peak = 1953.938 ; gain = 962.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:03 ; elapsed = 00:02:20 . Memory (MB): peak = 2020.789 ; gain = 1030.543
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:47 ; elapsed = 00:01:57 . Memory (MB): peak = 1953.938 ; gain = 962.480
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -534,44 +701,44 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     3|
-|2     |CARRY4 |   794|
-|3     |LUT1   |   601|
-|4     |LUT2   |  1393|
-|5     |LUT3   |   772|
-|6     |LUT4   |   610|
-|7     |LUT5   |   930|
-|8     |LUT6   |  2796|
-|9     |MUXF7  |    42|
-|10    |MUXF8  |    15|
-|11    |FDRE   |   502|
-|12    |FDSE   |    77|
+|2     |CARRY4 |   810|
+|3     |LUT1   |   604|
+|4     |LUT2   |  1434|
+|5     |LUT3   |   884|
+|6     |LUT4   |   894|
+|7     |LUT5   |  1913|
+|8     |LUT6   | 10132|
+|9     |MUXF7  |  2510|
+|10    |MUXF8  |   302|
+|11    |FDRE   |  4482|
+|12    |FDSE   |   132|
 |13    |IBUF   |     2|
 |14    |OBUF   |    32|
 |15    |OBUFT  |     1|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:03 ; elapsed = 00:02:20 . Memory (MB): peak = 2020.789 ; gain = 1030.543
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:47 ; elapsed = 00:01:57 . Memory (MB): peak = 1953.938 ; gain = 962.480
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:44 ; elapsed = 00:02:14 . Memory (MB): peak = 2020.789 ; gain = 900.879
-Synthesis Optimization Complete : Time (s): cpu = 00:02:04 ; elapsed = 00:02:21 . Memory (MB): peak = 2020.789 ; gain = 1030.543
+Synthesis finished with 0 errors, 32 critical warnings and 27 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:30 ; elapsed = 00:01:53 . Memory (MB): peak = 1953.938 ; gain = 860.902
+Synthesis Optimization Complete : Time (s): cpu = 00:01:47 ; elapsed = 00:01:58 . Memory (MB): peak = 1953.938 ; gain = 962.480
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.077 . Memory (MB): peak = 2020.789 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 851 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.228 . Memory (MB): peak = 1953.938 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 3622 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2020.789 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1953.938 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: ee776e53
+Synth Design complete | Checksum: 6e1d49fe
 INFO: [Common 17-83] Releasing license: Synthesis
-258 Infos, 47 Warnings, 4 Critical Warnings and 0 Errors encountered.
+47 Infos, 71 Warnings, 36 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:07 ; elapsed = 00:02:26 . Memory (MB): peak = 2020.789 ; gain = 1452.301
+synth_design: Time (s): cpu = 00:01:54 ; elapsed = 00:02:05 . Memory (MB): peak = 1953.938 ; gain = 1385.160
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 2020.789 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1953.938 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/University/FPGA/checkers_zynq/checkers_zynq.runs/synth_1/project.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file project_utilization_synth.rpt -pb project_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu May  9 16:22:18 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu May  9 16:45:05 2024...

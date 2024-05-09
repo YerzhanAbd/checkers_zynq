@@ -220,7 +220,7 @@ begin
                     -- top-right
                     legal_moves(CHOSEN_Y-1,CHOSEN_X+1) <= '1';
                     number_of_legal_moves <= number_of_legal_moves + 1;
-                elsif CHOSEN_Y-2 >= 0 and CHOSEN_X+2 <= BOARD_SIZE and black_pieces(CHOSEN_Y-1, CHOSEN_X+1) = 1 and white_pieces(CHOSEN_Y-2, CHOSEN_X+2) = 0 and black_pieces(CHOSEN_Y-2, CHOSEN_X+2) = 0 then
+                elsif CHOSEN_Y-2 >= 0 and CHOSEN_X+2 <= BOARD_SIZE and black_pieces(CHOSEN_Y-1, CHOSEN_X+1) >= 1 and white_pieces(CHOSEN_Y-2, CHOSEN_X+2) = 0 and black_pieces(CHOSEN_Y-2, CHOSEN_X+2) = 0 then
                     -- top-left capture
                     legal_moves(CHOSEN_Y-2,CHOSEN_X+2) <= '1';
                     number_of_legal_moves <= number_of_legal_moves + 1;
@@ -229,7 +229,7 @@ begin
                     -- top-left
                     legal_moves(CHOSEN_Y-1,CHOSEN_X-1) <= '1';
                     number_of_legal_moves <= number_of_legal_moves + 1;
-                elsif CHOSEN_Y-2 >= 0 and CHOSEN_X-2 >= 0 and black_pieces(CHOSEN_Y-1, CHOSEN_X-1) = 1 and white_pieces(CHOSEN_Y-2, CHOSEN_X-2) = 0 and black_pieces(CHOSEN_Y-2, CHOSEN_X-2) = 0 then
+                elsif CHOSEN_Y-2 >= 0 and CHOSEN_X-2 >= 0 and black_pieces(CHOSEN_Y-1, CHOSEN_X-1) >= 1 and white_pieces(CHOSEN_Y-2, CHOSEN_X-2) = 0 and black_pieces(CHOSEN_Y-2, CHOSEN_X-2) = 0 then
                     -- top-left capture
                     legal_moves(CHOSEN_Y-2,CHOSEN_X-2) <= '1';
                     number_of_legal_moves <= number_of_legal_moves + 1;
@@ -242,7 +242,7 @@ begin
                     -- down-left
                     legal_moves(CHOSEN_Y+1,CHOSEN_X-1) <= '1';
                     number_of_legal_moves <= number_of_legal_moves + 1;
-                elsif CHOSEN_Y+2 <= BOARD_SIZE and CHOSEN_X-2 >= 0 and white_pieces(CHOSEN_Y+1, CHOSEN_X-1) = 1 and white_pieces(CHOSEN_Y+2, CHOSEN_X-2) = 0 and black_pieces(CHOSEN_Y+2, CHOSEN_X-2) = 0 then
+                elsif CHOSEN_Y+2 <= BOARD_SIZE and CHOSEN_X-2 >= 0 and white_pieces(CHOSEN_Y+1, CHOSEN_X-1) >= 1 and white_pieces(CHOSEN_Y+2, CHOSEN_X-2) = 0 and black_pieces(CHOSEN_Y+2, CHOSEN_X-2) = 0 then
                     -- down-left capture
                     legal_moves(CHOSEN_Y+2,CHOSEN_X-2) <= '1';
                     number_of_legal_moves <= number_of_legal_moves + 1;
@@ -251,7 +251,7 @@ begin
                     -- down-right
                     legal_moves(CHOSEN_Y+1,CHOSEN_X+1) <= '1';
                     number_of_legal_moves <= number_of_legal_moves + 1;
-                elsif CHOSEN_Y+2 <= BOARD_SIZE and CHOSEN_X+2 <= BOARD_SIZE and white_pieces(CHOSEN_Y+1, CHOSEN_X+1) = 1 and white_pieces(CHOSEN_Y+2, CHOSEN_X+2) = 0 and black_pieces(CHOSEN_Y+2, CHOSEN_X+2) = 0 then
+                elsif CHOSEN_Y+2 <= BOARD_SIZE and CHOSEN_X+2 <= BOARD_SIZE and white_pieces(CHOSEN_Y+1, CHOSEN_X+1) >= 1 and white_pieces(CHOSEN_Y+2, CHOSEN_X+2) = 0 and black_pieces(CHOSEN_Y+2, CHOSEN_X+2) = 0 then
                     -- down-right capture
                     legal_moves(CHOSEN_Y+2,CHOSEN_X+2) <= '1';
                     number_of_legal_moves <= number_of_legal_moves + 1;
@@ -260,39 +260,76 @@ begin
             
             -- identify moves for white king
             directions := "0000";
-            if (white_pieces(CHOSEN_Y, CHOSEN_X) = 2 and TURN = '0') then
-                offset := 1;
-                while offset <= 7 loop
-                    if (directions(0) = '0') and (CHOSEN_Y + offset <= BOARD_SIZE) and (CHOSEN_X + offset <= BOARD_SIZE) then
-                        if (white_pieces(CHOSEN_Y + offset, CHOSEN_X + offset) = 0) and (black_pieces(CHOSEN_Y + offset, CHOSEN_X + offset) = 0) then
-                            legal_moves(CHOSEN_Y + offset, CHOSEN_X + offset) <= '1';
-                        else
-                            directions(0) := '1';
+            if (CHOSEN_X /= -1) and (CHOSEN_Y /= -1) then
+                if (white_pieces(CHOSEN_Y, CHOSEN_X) = 2 and TURN = '0') then
+                    offset := 1;
+                    while offset <= 7 loop
+                        if (directions(0) = '0') and (CHOSEN_Y + offset <= BOARD_SIZE) and (CHOSEN_X + offset <= BOARD_SIZE) then
+                            if (white_pieces(CHOSEN_Y + offset, CHOSEN_X + offset) = 0) and (black_pieces(CHOSEN_Y + offset, CHOSEN_X + offset) = 0) then
+                                legal_moves(CHOSEN_Y + offset, CHOSEN_X + offset) <= '1';
+                            else
+                                directions(0) := '1';
+                            end if;
+                        end if;                 
+                        if (directions(1) = '0') and (CHOSEN_Y + offset <= BOARD_SIZE) and (CHOSEN_X - offset >= 0) then
+                            if (white_pieces(CHOSEN_Y + offset, CHOSEN_X - offset) = 0) and (black_pieces(CHOSEN_Y + offset, CHOSEN_X - offset) = 0) then
+                                legal_moves(CHOSEN_Y + offset, CHOSEN_X - offset) <= '1';
+                            else
+                                directions(1) := '1';
+                            end if;
                         end if;
-                    end if;                 
-                    if (directions(1) = '0') and (CHOSEN_Y + offset <= BOARD_SIZE) and (CHOSEN_X - offset >= 0) then
-                        if (white_pieces(CHOSEN_Y + offset, CHOSEN_X - offset) = 0) and (black_pieces(CHOSEN_Y + offset, CHOSEN_X - offset) = 0) then
-                            legal_moves(CHOSEN_Y + offset, CHOSEN_X - offset) <= '1';
-                        else
-                            directions(1) := '1';
+                        if (directions(2) = '0') and (CHOSEN_Y - offset >= 0) and (CHOSEN_X - offset >= 0) then
+                            if (white_pieces(CHOSEN_Y - offset, CHOSEN_X - offset) = 0) and (black_pieces(CHOSEN_Y - offset, CHOSEN_X - offset) = 0) then
+                                legal_moves(CHOSEN_Y - offset, CHOSEN_X - offset) <= '1';
+                            else
+                                directions(2) := '1';
+                            end if;
                         end if;
-                    end if;
-                    if (directions(2) = '0') and (CHOSEN_Y - offset >= 0) and (CHOSEN_X - offset >= 0) then
-                        if (white_pieces(CHOSEN_Y - offset, CHOSEN_X - offset) = 0) and (black_pieces(CHOSEN_Y - offset, CHOSEN_X - offset) = 0) then
-                            legal_moves(CHOSEN_Y - offset, CHOSEN_X - offset) <= '1';
-                        else
-                            directions(2) := '1';
+                        if (directions(3) = '0') and (CHOSEN_Y - offset >= 0) and (CHOSEN_X + offset <= BOARD_SIZE) then
+                            if (white_pieces(CHOSEN_Y - offset, CHOSEN_X + offset) = 0) and (black_pieces(CHOSEN_Y - offset, CHOSEN_X + offset) = 0) then
+                                legal_moves(CHOSEN_Y - offset, CHOSEN_X + offset) <= '1';
+                            else
+                                directions(3) := '1';
+                            end if;
                         end if;
-                    end if;
-                    if (directions(3) = '0') and (CHOSEN_Y - offset >= 0) and (CHOSEN_X + offset <= BOARD_SIZE) then
-                        if (white_pieces(CHOSEN_Y - offset, CHOSEN_X + offset) = 0) and (black_pieces(CHOSEN_Y - offset, CHOSEN_X + offset) = 0) then
-                            legal_moves(CHOSEN_Y - offset, CHOSEN_X + offset) <= '1';
-                        else
-                            directions(3) := '1';
+                        offset := offset + 1;
+                    end loop;
+                end if;
+                
+                if (black_pieces(CHOSEN_Y, CHOSEN_X) = 2 and TURN = '1') then
+                    offset := 1;
+                    while offset <= 7 loop
+                        if (directions(0) = '0') and (CHOSEN_Y + offset <= BOARD_SIZE) and (CHOSEN_X + offset <= BOARD_SIZE) then
+                            if (white_pieces(CHOSEN_Y + offset, CHOSEN_X + offset) = 0) and (black_pieces(CHOSEN_Y + offset, CHOSEN_X + offset) = 0) then
+                                legal_moves(CHOSEN_Y + offset, CHOSEN_X + offset) <= '1';
+                            else
+                                directions(0) := '1';
+                            end if;
+                        end if;                 
+                        if (directions(1) = '0') and (CHOSEN_Y + offset <= BOARD_SIZE) and (CHOSEN_X - offset >= 0) then
+                            if (white_pieces(CHOSEN_Y + offset, CHOSEN_X - offset) = 0) and (black_pieces(CHOSEN_Y + offset, CHOSEN_X - offset) = 0) then
+                                legal_moves(CHOSEN_Y + offset, CHOSEN_X - offset) <= '1';
+                            else
+                                directions(1) := '1';
+                            end if;
                         end if;
-                    end if;
-                    offset := offset + 1;
-                end loop;
+                        if (directions(2) = '0') and (CHOSEN_Y - offset >= 0) and (CHOSEN_X - offset >= 0) then
+                            if (white_pieces(CHOSEN_Y - offset, CHOSEN_X - offset) = 0) and (black_pieces(CHOSEN_Y - offset, CHOSEN_X - offset) = 0) then
+                                legal_moves(CHOSEN_Y - offset, CHOSEN_X - offset) <= '1';
+                            else
+                                directions(2) := '1';
+                            end if;
+                        end if;
+                        if (directions(3) = '0') and (CHOSEN_Y - offset >= 0) and (CHOSEN_X + offset <= BOARD_SIZE) then
+                            if (white_pieces(CHOSEN_Y - offset, CHOSEN_X + offset) = 0) and (black_pieces(CHOSEN_Y - offset, CHOSEN_X + offset) = 0) then
+                                legal_moves(CHOSEN_Y - offset, CHOSEN_X + offset) <= '1';
+                            else
+                                directions(3) := '1';
+                            end if;
+                        end if;
+                        offset := offset + 1;
+                    end loop;
+                end if;
             end if;
             
 --            if (black_pieces(CHOSEN_Y, CHOSEN_X) = 2) then
@@ -352,8 +389,8 @@ begin
                             black_pieces(CHOSEN_Y-1, CHOSEN_X-1) <= 0;
                             capture := 1;
                         end if;
+                        white_pieces(Y_COORD, X_COORD) <= white_pieces(CHOSEN_Y, CHOSEN_X);
                         white_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
-                        white_pieces(Y_COORD, X_COORD) <= 1;
                     else -- black turn
                         if Y_COORD = CHOSEN_Y+2 and X_COORD = CHOSEN_X-2 then -- capturing move, turn should not change
                             white_pieces(CHOSEN_Y+1, CHOSEN_X-1) <= 0;
@@ -362,8 +399,8 @@ begin
                             white_pieces(CHOSEN_Y+1, CHOSEN_X+1) <= 0;
                             capture := 1;
                         end if;
+                        black_pieces(Y_COORD, X_COORD) <= black_pieces(CHOSEN_Y, CHOSEN_X);
                         black_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
-                        black_pieces(Y_COORD, X_COORD) <= 1;
                     end if;
                     
                     if (capture = 0) then

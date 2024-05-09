@@ -5,6 +5,7 @@ use ieee.numeric_std.all;
 use work.boardPckg.all;
 use work.legalMovesPckg.all;
 
+
 entity project is
     port (
         clk: in std_logic;        
@@ -130,6 +131,12 @@ architecture Behavioral of project is
     
      
 begin
+
+    -- FSM
+    -- State 1 -> move around the board and choose the piece
+    -- State 2 -> The piece is chosen, make a move, OR move around the board and choose another piece
+    -- State 3 -> Multiple captures. Capture multiple pieces. ONLY capturing moves accepted.
+    --            If there are no pieces to capture, the turn is passed to another player
     get_coords: process(clk10Hz)
     begin
         Q <= std_logic_vector(TO_UNSIGNED(STATE, 8));
@@ -148,6 +155,7 @@ begin
           mosi => mosi,
           sclk => sclk,
           cs_n => cs_n,
+          trigger_button => trigger_button,
           x_position => x_position,
           y_position => y_position
     );
@@ -250,7 +258,7 @@ begin
     begin
         if rising_edge(clk10Hz) then
             
-            if (BTNU = '1') and (STATE /= 3) then
+            if ((STATE = 1 or STATE = 2) and trigger_button = '1') and (STATE /= 3) then
                 if (white_pieces(Y_COORD, X_COORD) = 1 and TURN = '0') then
                     CHOSEN_Y <= Y_COORD;
                     CHOSEN_X <= X_COORD;
@@ -275,7 +283,7 @@ begin
                 SELECTED_PIECE <= false;
             end if;
             if Y_COORD >= 0 and Y_COORD <= 7 and X_COORD >= 0 and X_COORD <= 7 and legal_moves(Y_COORD, X_COORD) = '1' then
-                if (BTND = '1' and SELECTED_PIECE = true and TURN = '0') then -- white turn
+                if (((STATE = 2 or STATE = 3) and trigger_button = '1') and SELECTED_PIECE = true and TURN = '0') then -- white turn
                     if Y_COORD = CHOSEN_Y-1 and X_COORD = CHOSEN_X+1 then -- non capturing move
                         white_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
                         white_pieces(Y_COORD, X_COORD) <= 1;
@@ -314,7 +322,7 @@ begin
                         CHOSEN_X <= X_COORD;
                     end if;
                 end if;
-                if (BTND = '1' and SELECTED_PIECE = true and TURN = '1') then -- black turn
+                if (((STATE = 2 or STATE = 3) and trigger_button = '1') and SELECTED_PIECE = true and TURN = '1') then -- black turn
                     if Y_COORD = CHOSEN_Y+1 and X_COORD = CHOSEN_X-1 then -- non capturing move
                         black_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
                         black_pieces(Y_COORD, X_COORD) <= 1;

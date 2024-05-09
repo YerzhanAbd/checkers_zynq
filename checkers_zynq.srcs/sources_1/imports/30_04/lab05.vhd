@@ -285,47 +285,27 @@ begin
             end if;
             if legal_moves(Y_COORD, X_COORD) = '1' then
                 if (((STATE = 2 or STATE = 3) and trigger_button = '1') and SELECTED_PIECE = true) then
+                    capture := 0;
                     if (TURN = '0') then -- white turn
-                        if Y_COORD = CHOSEN_Y-1 and X_COORD = CHOSEN_X+1 then -- non capturing move
-                            white_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
-                            white_pieces(Y_COORD, X_COORD) <= 1;
-                            capture := 0;
-                            
-                        elsif Y_COORD = CHOSEN_Y-1 and X_COORD = CHOSEN_X-1 then -- non capturing move
-                            white_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
-                            white_pieces(Y_COORD, X_COORD) <= 1;
-                            capture := 0;
-                        elsif Y_COORD = CHOSEN_Y-2 and X_COORD = CHOSEN_X+2 then -- capturing move, turn should not change
-                            white_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
-                            white_pieces(Y_COORD, X_COORD) <= 1;
+                        if Y_COORD = CHOSEN_Y-2 and X_COORD = CHOSEN_X+2 then -- capturing move, turn should not change
                             black_pieces(CHOSEN_Y-1, CHOSEN_X+1) <= 0;
                             capture := 1;
                         elsif Y_COORD = CHOSEN_Y-2 and X_COORD = CHOSEN_X-2 then -- capturing move, turn should not change
-                            white_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
-                            white_pieces(Y_COORD, X_COORD) <= 1;
                             black_pieces(CHOSEN_Y-1, CHOSEN_X-1) <= 0;
                             capture := 1;
                         end if;
+                        white_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
+                        white_pieces(Y_COORD, X_COORD) <= 1;
                     else -- black turn
-                        if Y_COORD = CHOSEN_Y+1 and X_COORD = CHOSEN_X-1 then -- non capturing move
-                            black_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
-                            black_pieces(Y_COORD, X_COORD) <= 1;
-                            capture := 0;
-                        elsif Y_COORD = CHOSEN_Y+1 and X_COORD = CHOSEN_X+1 then -- non capturing move
-                            black_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
-                            black_pieces(Y_COORD, X_COORD) <= 1;
-                            capture := 0;
-                        elsif Y_COORD = CHOSEN_Y+2 and X_COORD = CHOSEN_X-2 then -- capturing move, turn should not change
-                            black_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
-                            black_pieces(Y_COORD, X_COORD) <= 1;
+                        if Y_COORD = CHOSEN_Y+2 and X_COORD = CHOSEN_X-2 then -- capturing move, turn should not change
                             white_pieces(CHOSEN_Y+1, CHOSEN_X-1) <= 0;
                             capture := 1;
                         elsif Y_COORD = CHOSEN_Y+2 and X_COORD = CHOSEN_X+2 then -- capturing move, turn should not change
-                            black_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
-                            black_pieces(Y_COORD, X_COORD) <= 1;
                             white_pieces(CHOSEN_Y+1, CHOSEN_X+1) <= 0;
                             capture := 1;
                         end if;
+                        black_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
+                        black_pieces(Y_COORD, X_COORD) <= 1;
                     end if;
                     
                     if (capture = 0) then

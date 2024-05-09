@@ -20,7 +20,7 @@ entity vga_driver is
         black_pieces: IN pieces;
         MOVE_X, MOVE_Y : IN INTEGER;
         CHOSEN_X, CHOSEN_Y : IN INTEGER;
-        legal_moves : IN legalMoves
+        legal_moves : IN board
     ); 
 end vga_driver; 
 
@@ -110,16 +110,7 @@ begin
         else
             SQUARE_COLOR <= 0;
         end if;
-        if X_COORD = legal_moves(0,0) and Y_COORD = legal_moves(0,1) then
-            SQUARE_COLOR <= 4;
-        end if;
-        if X_COORD = legal_moves(1,0) and Y_COORD = legal_moves(1,1) then
-            SQUARE_COLOR <= 4;
-        end if;
-        if X_COORD = legal_moves(2,0) and Y_COORD = legal_moves(2,1) then
-            SQUARE_COLOR <= 4;
-        end if;
-        if X_COORD = legal_moves(3,0) and Y_COORD = legal_moves(3,1) then
+        if legal_moves(Y_COORD, X_COORD) = '1' then
             SQUARE_COLOR <= 4;
         end if;
         if (X_COORD = CHOSEN_X and Y_COORD = CHOSEN_Y) then

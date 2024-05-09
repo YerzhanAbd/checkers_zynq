@@ -3,8 +3,8 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Thu May  9 10:00:52 2024
-# Process ID: 17900
+# Start of session at: Thu May  9 10:22:27 2024
+# Process ID: 30244
 # Current directory: C:/University/FPGA/checkers_zynq/checkers_zynq.runs/synth_1
 # Command line: vivado.exe -log project.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source project.tcl
 # Log file: C:/University/FPGA/checkers_zynq/checkers_zynq.runs/synth_1/project.vds
@@ -24,16 +24,16 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 29124
+INFO: [Synth 8-7075] Helper process launched with PID 40900
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1430.539 ; gain = 439.750
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1430.812 ; gain = 439.598
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'project' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:27]
-WARNING: [Synth 8-614] signal 'X_COORD' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:139]
-WARNING: [Synth 8-614] signal 'Y_COORD' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:139]
-WARNING: [Synth 8-614] signal 'X_COORD_VEC' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:139]
-WARNING: [Synth 8-614] signal 'Y_COORD_VEC' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:139]
-INFO: [Synth 8-3491] module 'ssd_ctrl' declared at 'C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/new/ssd_ctrl.vhd:4' bound to instance 'comp_ssd_ctrl' of component 'ssd_ctrl' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:146]
+WARNING: [Synth 8-614] signal 'X_COORD' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:134]
+WARNING: [Synth 8-614] signal 'Y_COORD' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:134]
+WARNING: [Synth 8-614] signal 'X_COORD_VEC' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:134]
+WARNING: [Synth 8-614] signal 'Y_COORD_VEC' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:134]
+INFO: [Synth 8-3491] module 'ssd_ctrl' declared at 'C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/new/ssd_ctrl.vhd:4' bound to instance 'comp_ssd_ctrl' of component 'ssd_ctrl' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:141]
 INFO: [Synth 8-638] synthesizing module 'ssd_ctrl' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/new/ssd_ctrl.vhd:14]
 INFO: [Synth 8-226] default block is never used [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/new/ssd_ctrl.vhd:28]
 	Parameter N bound to: 500000 - type: integer 
@@ -43,7 +43,7 @@ INFO: [Synth 8-638] synthesizing module 'clock_divider' [C:/University/FPGA/chec
 INFO: [Synth 8-256] done synthesizing module 'clock_divider' (0#1) [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/clock_divider.vhd:11]
 INFO: [Synth 8-256] done synthesizing module 'ssd_ctrl' (0#1) [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/new/ssd_ctrl.vhd:14]
 	Parameter clk_freq bound to: 100 - type: integer 
-INFO: [Synth 8-3491] module 'pmod_joystick' declared at 'C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/pmod_joystick.vhd:26' bound to instance 'joystick_test' of component 'pmod_joystick' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:147]
+INFO: [Synth 8-3491] module 'pmod_joystick' declared at 'C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/pmod_joystick.vhd:26' bound to instance 'joystick_test' of component 'pmod_joystick' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:142]
 INFO: [Synth 8-638] synthesizing module 'pmod_joystick' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/pmod_joystick.vhd:42]
 	Parameter clk_freq bound to: 100 - type: integer 
 	Parameter slaves bound to: 1 - type: integer 
@@ -55,16 +55,16 @@ INFO: [Synth 8-638] synthesizing module 'spi_master' [C:/University/FPGA/checker
 INFO: [Synth 8-256] done synthesizing module 'spi_master' (0#1) [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/spi_master.vhd:54]
 INFO: [Synth 8-256] done synthesizing module 'pmod_joystick' (0#1) [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/pmod_joystick.vhd:42]
 	Parameter N bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'clock_divider' declared at 'C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/clock_divider.vhd:5' bound to instance 'comp_clk50MHz' of component 'clock_divider' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:160]
+INFO: [Synth 8-3491] module 'clock_divider' declared at 'C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/clock_divider.vhd:5' bound to instance 'comp_clk50MHz' of component 'clock_divider' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:155]
 INFO: [Synth 8-638] synthesizing module 'clock_divider__parameterized1' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/clock_divider.vhd:11]
 	Parameter N bound to: 1 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'clock_divider__parameterized1' (0#1) [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/clock_divider.vhd:11]
 	Parameter N bound to: 5000000 - type: integer 
-INFO: [Synth 8-3491] module 'clock_divider' declared at 'C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/clock_divider.vhd:5' bound to instance 'comp_clk10Hz' of component 'clock_divider' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:162]
+INFO: [Synth 8-3491] module 'clock_divider' declared at 'C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/clock_divider.vhd:5' bound to instance 'comp_clk10Hz' of component 'clock_divider' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:157]
 INFO: [Synth 8-638] synthesizing module 'clock_divider__parameterized3' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/clock_divider.vhd:11]
 	Parameter N bound to: 5000000 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'clock_divider__parameterized3' (0#1) [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/clock_divider.vhd:11]
-INFO: [Synth 8-3491] module 'vga_driver' declared at 'C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:13' bound to instance 'vga_display' of component 'vga_driver' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:164]
+INFO: [Synth 8-3491] module 'vga_driver' declared at 'C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:13' bound to instance 'vga_display' of component 'vga_driver' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:159]
 INFO: [Synth 8-638] synthesizing module 'vga_driver' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:27]
 WARNING: [Synth 8-614] signal 'H_INNER_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:103]
 WARNING: [Synth 8-614] signal 'V_INNER_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:103]
@@ -76,36 +76,36 @@ WARNING: [Synth 8-614] signal 'CHOSEN_X' is read in the process but is not in th
 WARNING: [Synth 8-614] signal 'CHOSEN_Y' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:103]
 WARNING: [Synth 8-614] signal 'MOVE_X' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:103]
 WARNING: [Synth 8-614] signal 'MOVE_Y' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:103]
-WARNING: [Synth 8-614] signal 'H_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:149]
-WARNING: [Synth 8-614] signal 'V_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:149]
-WARNING: [Synth 8-614] signal 'H_INNER_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:149]
-WARNING: [Synth 8-614] signal 'H_INNER_BOT_RIGHT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:149]
-WARNING: [Synth 8-614] signal 'V_INNER_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:149]
-WARNING: [Synth 8-614] signal 'V_INNER_BOT_RIGHT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:149]
-WARNING: [Synth 8-614] signal 'H_PIECE_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:149]
-WARNING: [Synth 8-614] signal 'X_COORD' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:149]
-WARNING: [Synth 8-614] signal 'Y_COORD' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:149]
-WARNING: [Synth 8-614] signal 'V_PIECE_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:149]
-WARNING: [Synth 8-614] signal 'white_pieces' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:149]
-WARNING: [Synth 8-614] signal 'black_pieces' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:149]
-WARNING: [Synth 8-614] signal 'SQUARE_COLOR' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:149]
+WARNING: [Synth 8-614] signal 'H_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
+WARNING: [Synth 8-614] signal 'V_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
+WARNING: [Synth 8-614] signal 'H_INNER_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
+WARNING: [Synth 8-614] signal 'H_INNER_BOT_RIGHT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
+WARNING: [Synth 8-614] signal 'V_INNER_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
+WARNING: [Synth 8-614] signal 'V_INNER_BOT_RIGHT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
+WARNING: [Synth 8-614] signal 'H_PIECE_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
+WARNING: [Synth 8-614] signal 'X_COORD' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
+WARNING: [Synth 8-614] signal 'Y_COORD' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
+WARNING: [Synth 8-614] signal 'V_PIECE_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
+WARNING: [Synth 8-614] signal 'white_pieces' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
+WARNING: [Synth 8-614] signal 'black_pieces' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
+WARNING: [Synth 8-614] signal 'SQUARE_COLOR' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
 INFO: [Synth 8-256] done synthesizing module 'vga_driver' (0#1) [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:27]
-WARNING: [Synth 8-614] signal 'MOVE_X' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:179]
-WARNING: [Synth 8-614] signal 'MOVE_Y' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:179]
+WARNING: [Synth 8-614] signal 'MOVE_X' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:174]
+WARNING: [Synth 8-614] signal 'MOVE_Y' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:174]
 INFO: [Synth 8-256] done synthesizing module 'project' (0#1) [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:27]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1669.859 ; gain = 679.070
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1761.879 ; gain = 770.664
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1669.859 ; gain = 679.070
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1761.879 ; gain = 770.664
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1669.859 ; gain = 679.070
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1761.879 ; gain = 770.664
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.310 . Memory (MB): peak = 1669.859 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.346 . Memory (MB): peak = 1761.879 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -130,28 +130,28 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/project_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1773.793 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1866.426 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1773.793 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.050 . Memory (MB): peak = 1866.426 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1773.793 ; gain = 783.004
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1866.426 ; gain = 875.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1773.793 ; gain = 783.004
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1866.426 ; gain = 875.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:18 . Memory (MB): peak = 1773.793 ; gain = 783.004
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 1866.426 ; gain = 875.211
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'pmod_joystick'
 ---------------------------------------------------------------------------------------------------
@@ -165,7 +165,7 @@ INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'pmod_
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'pmod_joystick'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1773.793 ; gain = 783.004
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1866.426 ; gain = 875.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -180,44 +180,43 @@ Detailed RTL Component Info :
 	   2 Input    5 Bit       Adders := 4     
 	   2 Input    3 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 40    
+	               32 Bit    Registers := 32    
 	               24 Bit    Registers := 1     
 	               18 Bit    Registers := 1     
 	               10 Bit    Registers := 52    
 	                8 Bit    Registers := 58    
 	                5 Bit    Registers := 2     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 16    
+	                1 Bit    Registers := 80    
 +---Multipliers : 
 	               7x32  Multipliers := 2     
 +---Muxes : 
-	   2 Input   32 Bit        Muxes := 42    
-	   5 Input   32 Bit        Muxes := 10    
+	   2 Input   32 Bit        Muxes := 10    
+	   5 Input   32 Bit        Muxes := 2     
 	   2 Input   31 Bit        Muxes := 2     
 	   2 Input   24 Bit        Muxes := 4     
 	   5 Input   24 Bit        Muxes := 1     
 	   2 Input   18 Bit        Muxes := 3     
 	   5 Input   18 Bit        Muxes := 1     
 	   2 Input   10 Bit        Muxes := 64    
-	   8 Input    9 Bit        Muxes := 1     
 	   4 Input    9 Bit        Muxes := 64    
 	   2 Input    8 Bit        Muxes := 70    
 	   5 Input    8 Bit        Muxes := 1     
 	   5 Input    7 Bit        Muxes := 64    
+	   5 Input    6 Bit        Muxes := 1     
 	   2 Input    6 Bit        Muxes := 64    
 	   2 Input    5 Bit        Muxes := 130   
-	   4 Input    4 Bit        Muxes := 1     
+	   5 Input    4 Bit        Muxes := 2     
 	   2 Input    4 Bit        Muxes := 147   
-	   3 Input    4 Bit        Muxes := 2     
+	   3 Input    4 Bit        Muxes := 1     
 	   2 Input    3 Bit        Muxes := 66    
 	   5 Input    3 Bit        Muxes := 1     
-	   5 Input    2 Bit        Muxes := 2     
 	   2 Input    2 Bit        Muxes := 10    
 	   4 Input    2 Bit        Muxes := 1     
 	   8 Input    1 Bit        Muxes := 3     
-	   2 Input    1 Bit        Muxes := 1246  
+	   2 Input    1 Bit        Muxes := 3906  
+	   5 Input    1 Bit        Muxes := 138   
 	   4 Input    1 Bit        Muxes := 64    
-	   5 Input    1 Bit        Muxes := 76    
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -235,25 +234,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:25 ; elapsed = 00:01:30 . Memory (MB): peak = 1801.641 ; gain = 810.852
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:14 ; elapsed = 00:01:19 . Memory (MB): peak = 1866.426 ; gain = 875.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:28 ; elapsed = 00:01:34 . Memory (MB): peak = 1801.641 ; gain = 810.852
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:18 ; elapsed = 00:01:24 . Memory (MB): peak = 1866.426 ; gain = 875.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:29 ; elapsed = 00:01:35 . Memory (MB): peak = 1801.641 ; gain = 810.852
+Finished Timing Optimization : Time (s): cpu = 00:01:19 ; elapsed = 00:01:24 . Memory (MB): peak = 1866.426 ; gain = 875.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:31 ; elapsed = 00:01:37 . Memory (MB): peak = 1801.641 ; gain = 810.852
+Finished Technology Mapping : Time (s): cpu = 00:01:21 ; elapsed = 00:01:27 . Memory (MB): peak = 1866.426 ; gain = 875.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -271,37 +270,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:34 ; elapsed = 00:01:40 . Memory (MB): peak = 1801.641 ; gain = 810.852
+Finished IO Insertion : Time (s): cpu = 00:01:25 ; elapsed = 00:01:31 . Memory (MB): peak = 1866.426 ; gain = 875.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:34 ; elapsed = 00:01:40 . Memory (MB): peak = 1801.641 ; gain = 810.852
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:25 ; elapsed = 00:01:31 . Memory (MB): peak = 1866.426 ; gain = 875.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:35 ; elapsed = 00:01:41 . Memory (MB): peak = 1801.641 ; gain = 810.852
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:25 ; elapsed = 00:01:31 . Memory (MB): peak = 1866.426 ; gain = 875.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:35 ; elapsed = 00:01:41 . Memory (MB): peak = 1801.641 ; gain = 810.852
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:25 ; elapsed = 00:01:31 . Memory (MB): peak = 1866.426 ; gain = 875.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:35 ; elapsed = 00:01:41 . Memory (MB): peak = 1801.641 ; gain = 810.852
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:25 ; elapsed = 00:01:31 . Memory (MB): peak = 1866.426 ; gain = 875.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:35 ; elapsed = 00:01:41 . Memory (MB): peak = 1801.641 ; gain = 810.852
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:25 ; elapsed = 00:01:31 . Memory (MB): peak = 1866.426 ; gain = 875.211
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -318,44 +317,44 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |BUFG   |     3|
-|2     |CARRY4 |   629|
+|2     |CARRY4 |   605|
 |3     |LUT1   |   400|
-|4     |LUT2   |   847|
-|5     |LUT3   |   454|
-|6     |LUT4   |   386|
-|7     |LUT5   |   706|
-|8     |LUT6   |  1569|
-|9     |MUXF7  |    50|
-|10    |MUXF8  |    14|
-|11    |FDRE   |   491|
-|12    |FDSE   |   321|
+|4     |LUT2   |   915|
+|5     |LUT3   |   503|
+|6     |LUT4   |   430|
+|7     |LUT5   |   511|
+|8     |LUT6   |  2082|
+|9     |MUXF7  |    33|
+|10    |MUXF8  |     9|
+|11    |FDRE   |   556|
+|12    |FDSE   |    65|
 |13    |IBUF   |     4|
 |14    |OBUF   |    32|
 |15    |OBUFT  |     1|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:35 ; elapsed = 00:01:41 . Memory (MB): peak = 1801.641 ; gain = 810.852
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:25 ; elapsed = 00:01:31 . Memory (MB): peak = 1866.426 ; gain = 875.211
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:23 ; elapsed = 00:01:36 . Memory (MB): peak = 1801.641 ; gain = 706.918
-Synthesis Optimization Complete : Time (s): cpu = 00:01:35 ; elapsed = 00:01:41 . Memory (MB): peak = 1801.641 ; gain = 810.852
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:12 ; elapsed = 00:01:26 . Memory (MB): peak = 1866.426 ; gain = 770.664
+Synthesis Optimization Complete : Time (s): cpu = 00:01:25 ; elapsed = 00:01:31 . Memory (MB): peak = 1866.426 ; gain = 875.211
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.051 . Memory (MB): peak = 1801.641 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 693 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 1866.426 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 647 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1801.641 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1866.426 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 2bc3dc0f
+Synth Design complete | Checksum: c201f72c
 INFO: [Common 17-83] Releasing license: Synthesis
 47 Infos, 36 Warnings, 4 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:39 ; elapsed = 00:01:46 . Memory (MB): peak = 1801.641 ; gain = 1232.879
+synth_design: Time (s): cpu = 00:01:30 ; elapsed = 00:01:36 . Memory (MB): peak = 1866.426 ; gain = 1297.258
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1801.641 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1866.426 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/University/FPGA/checkers_zynq/checkers_zynq.runs/synth_1/project.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file project_utilization_synth.rpt -pb project_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu May  9 10:02:45 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu May  9 10:24:12 2024...

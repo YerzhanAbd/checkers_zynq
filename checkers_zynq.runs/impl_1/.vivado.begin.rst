@@ -168,3 +168,73 @@
     <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="32040" HostCore="16" HostMemory="016354070528">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="39724" HostCore="16" HostMemory="016354070528">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="25552" HostCore="16" HostMemory="016354070528">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="37844" HostCore="16" HostMemory="016354070528">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="23452" HostCore="16" HostMemory="016354070528">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="13024" HostCore="16" HostMemory="016354070528">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="28272" HostCore="16" HostMemory="016354070528">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="27076" HostCore="16" HostMemory="016354070528">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="4636" HostCore="16" HostMemory="016354070528">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="31644" HostCore="16" HostMemory="016354070528">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="3260" HostCore="16" HostMemory="016354070528">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="4260" HostCore="16" HostMemory="016354070528">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="13660" HostCore="16" HostMemory="016354070528">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="4636" HostCore="16" HostMemory="016354070528">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado.bat" Owner="Yerzhan" Host="LAPTOP-7GF0693T" Pid="7016" HostCore="16" HostMemory="016354070528">
+    </Process>
+</ProcessHandle>

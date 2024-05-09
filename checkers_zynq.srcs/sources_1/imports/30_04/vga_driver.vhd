@@ -153,11 +153,11 @@ begin
                     else
                         if ((hcount >= H_PIECE_TOP_LEFT + X_COORD * 50 and hcount < H_PIECE_TOP_LEFT + X_COORD * 50 + PIECE_LENGTH) and 
                     (vcount >= Y_COORD * 50 + V_PIECE_TOP_LEFT and vcount < V_PIECE_TOP_LEFT + Y_COORD * 50 + PIECE_LENGTH)) then 
-                            if (white_pieces(Y_COORD, X_COORD) = 1) then
+                            if (white_pieces(Y_COORD, X_COORD) >= 1) then
                                 red <= "1111";
                                 green <= "1111";
                                 blue <= "1111";
-                            elsif (black_pieces(Y_COORD, X_COORD) = 1) then
+                            elsif (black_pieces(Y_COORD, X_COORD) >= 1) then
                                 red <= "0000";
                                 green <= "0000";
                                 blue <= "0000";

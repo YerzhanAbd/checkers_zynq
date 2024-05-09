@@ -53,8 +53,8 @@ architecture Behavioral of project is
             hsync, vsync: out std_logic;        
             red, green, blue : out std_logic_vector(3 downto 0); 
             CHOSEN_X, CHOSEN_Y : IN INTEGER;
-            white_pieces: IN board;
-            black_pieces: IN board;      
+            white_pieces: IN pieces;
+            black_pieces: IN pieces;      
             MOVE_X : IN INTEGER;
             MOVE_Y : IN INTEGER;
             legal_moves : IN legalMoves
@@ -100,10 +100,31 @@ architecture Behavioral of project is
     signal MOVE_Y : integer := 0;
     signal BOARD_SIZE: integer := 7;
 
-   signal black_pieces : board := ("01010101", "10101010", "01010101", "00000000",
-           "00000000","00000000","00000000","00000000");
-   signal white_pieces : board := ("00000000", "00000000", "00000000", "00000000",
-    "00000000","10101010","01010101","10101010");
+   signal black_pieces : pieces := (
+   (0, 1, 0, 1, 0, 1, 0, 1),
+   (1, 0, 1, 0, 1, 0, 1, 0),
+   (0, 1, 0, 1, 0, 1, 0, 1),
+   (0, 0, 0, 0, 0, 0, 0, 0),
+   (0, 0, 0, 0, 0, 0, 0, 0),
+   (0, 0, 0, 0, 0, 0, 0, 0),
+   (0, 0, 0, 0, 0, 0, 0, 0),
+   (0, 0, 0, 0, 0, 0, 0, 0)
+   );
+   
+   signal white_pieces : pieces := (
+   (0, 0, 0, 0, 0, 0, 0, 0),
+   (0, 0, 0, 0, 0, 0, 0, 0),
+   (0, 0, 0, 0, 0, 0, 0, 0),
+   (0, 0, 0, 0, 0, 0, 0, 0),
+   (0, 0, 0, 0, 0, 0, 0, 0),
+   (1, 0, 1, 0, 1, 0, 1, 0),
+   (0, 1, 0, 1, 0, 1, 0, 1),
+   (1, 0, 1, 0, 1, 0, 1, 0)
+   );
+--   ("01010101", "10101010", "01010101", "00000000",
+--           "00000000","00000000","00000000","00000000");
+--   signal white_pieces : pieces := ("00000000", "00000000", "00000000", "00000000",
+--    "00000000","10101010","01010101","10101010");
     
    signal legal_moves : legalMoves := (
    -- (index: 1: y, index: 0: x)
@@ -186,54 +207,66 @@ begin
     begin
         if rising_edge(clk10Hz) then
             if BTNU = '1' then
---                Q <= "10101010";
-                -- X_COORD and Y_COORD
-                if (white_pieces(Y_COORD, X_COORD) = '1' and TURN = '0') then
+                -- Identify legal moves for non-king
+                if (white_pieces(Y_COORD, X_COORD) = 1 and TURN = '0') then
                     CHOSEN_Y <= Y_COORD;
                     CHOSEN_X <= X_COORD;
-                    if (Y_COORD-1 >= 0) and (X_COORD+1 <= 7) and white_pieces(Y_COORD-1, X_COORD+1) = '0' and black_pieces(Y_COORD-1, X_COORD+1) = '0' then
+                    if (Y_COORD-1 >= 0) and (X_COORD+1 <= 7) and white_pieces(Y_COORD-1, X_COORD+1) = 0 and black_pieces(Y_COORD-1, X_COORD+1) = 0 then
+                        -- top-right
                         legal_moves(0,0) <= X_COORD+1;
                         legal_moves(0,1) <= Y_COORD-1;
-                    elsif Y_COORD-2 >= 0 and X_COORD+2 <= 7 and black_pieces(Y_COORD-1, X_COORD+1) = '1' and white_pieces(Y_COORD-2, X_COORD+2) = '0' and black_pieces(Y_COORD-2, X_COORD+2) = '0' then
+                    elsif Y_COORD-2 >= 0 and X_COORD+2 <= 7 and black_pieces(Y_COORD-1, X_COORD+1) = 1 and white_pieces(Y_COORD-2, X_COORD+2) = 0 and black_pieces(Y_COORD-2, X_COORD+2) = 0 then
+                        -- top-left capture
                         legal_moves(0,0) <= X_COORD+2;
                         legal_moves(0,1) <= Y_COORD-2;
                     else
+                        -- no possible moves
                         legal_moves(0,0) <= -1;
                         legal_moves(0,1) <= -1;
                     end if;
-                    if (Y_COORD-1 >= 0) and (X_COORD-1 >= 0) and white_pieces(Y_COORD-1, X_COORD-1) = '0' and black_pieces(Y_COORD-1, X_COORD-1) = '0' then
+                    if (Y_COORD-1 >= 0) and (X_COORD-1 >= 0) and white_pieces(Y_COORD-1, X_COORD-1) = 0 and black_pieces(Y_COORD-1, X_COORD-1) = 0 then
+                        -- top-left
                         legal_moves(1,0) <= X_COORD-1;
                         legal_moves(1,1) <= Y_COORD-1;
-                    elsif Y_COORD-2 >= 0 and X_COORD-2 >= 0 and black_pieces(Y_COORD-1, X_COORD-1) = '1' and white_pieces(Y_COORD-2, X_COORD-2) = '0' and black_pieces(Y_COORD-2, X_COORD-2) = '0' then
+                    elsif Y_COORD-2 >= 0 and X_COORD-2 >= 0 and black_pieces(Y_COORD-1, X_COORD-1) = 1 and white_pieces(Y_COORD-2, X_COORD-2) = 0 and black_pieces(Y_COORD-2, X_COORD-2) = 0 then
+                        -- top-left capture
                         legal_moves(1,0) <= X_COORD-2;
                         legal_moves(1,1) <= Y_COORD-2;
                     else
+                        -- no legal moves
                         legal_moves(1,0) <= -1;
                         legal_moves(1,1) <= -1;
                     end if;
                     Q <= "11000000";
                     SELECTED_PIECE <= true;
                 end if;
-                if (black_pieces(Y_COORD, X_COORD) = '1' and TURN = '1') then
+                -- Identify legal moves for non-king
+                if (black_pieces(Y_COORD, X_COORD) = 1 and TURN = '1') then
                     CHOSEN_Y <= Y_COORD;
                     CHOSEN_X <= X_COORD;
-                    if (Y_COORD+1 <= 7) and (X_COORD-1 >= 0) and white_pieces(Y_COORD+1, X_COORD-1) = '0' and black_pieces(Y_COORD+1, X_COORD-1) = '0' then
+                    if (Y_COORD+1 <= 7) and (X_COORD-1 >= 0) and white_pieces(Y_COORD+1, X_COORD-1) = 0 and black_pieces(Y_COORD+1, X_COORD-1) = 0 then
+                        -- down-left
                         legal_moves(2,0) <= X_COORD-1;
                         legal_moves(2,1) <= Y_COORD+1;
-                    elsif Y_COORD+2 <= 7 and X_COORD-2 >= 0 and white_pieces(Y_COORD+1, X_COORD-1) = '1' and white_pieces(Y_COORD+2, X_COORD-2) = '0' and black_pieces(Y_COORD+2, X_COORD-2) = '0' then
+                    elsif Y_COORD+2 <= 7 and X_COORD-2 >= 0 and white_pieces(Y_COORD+1, X_COORD-1) = 1 and white_pieces(Y_COORD+2, X_COORD-2) = 0 and black_pieces(Y_COORD+2, X_COORD-2) = 0 then
+                        -- down-left capture
                         legal_moves(2,0) <= X_COORD-2;
                         legal_moves(2,1) <= Y_COORD+2;
                     else
+                        -- no legal moves
                         legal_moves(2,0) <= -1;
                         legal_moves(2,1) <= -1;
                     end if;
-                    if (Y_COORD+1 <= 7) and (X_COORD+1 <= 7) and white_pieces(Y_COORD+1, X_COORD+1) = '0' and black_pieces(Y_COORD+1, X_COORD+1) = '0' then
+                    if (Y_COORD+1 <= 7) and (X_COORD+1 <= 7) and white_pieces(Y_COORD+1, X_COORD+1) = 0 and black_pieces(Y_COORD+1, X_COORD+1) = 0 then
+                        -- doen-right
                         legal_moves(3,0) <= X_COORD+1;
                         legal_moves(3,1) <= Y_COORD+1;
-                    elsif Y_COORD+2 <= 7 and X_COORD+2 <= 7 and white_pieces(Y_COORD+1, X_COORD+1) = '1' and white_pieces(Y_COORD+2, X_COORD+2) = '0' and black_pieces(Y_COORD+2, X_COORD+2) = '0' then
+                    elsif Y_COORD+2 <= 7 and X_COORD+2 <= 7 and white_pieces(Y_COORD+1, X_COORD+1) = 1 and white_pieces(Y_COORD+2, X_COORD+2) = 0 and black_pieces(Y_COORD+2, X_COORD+2) = 0 then
+                        -- down-right capture
                         legal_moves(3,0) <= X_COORD+2;
                         legal_moves(3,1) <= Y_COORD+2;
                     else
+                        -- no legal moves
                         legal_moves(3,0) <= -1;
                         legal_moves(3,1) <= -1;
                     end if;
@@ -241,11 +274,11 @@ begin
                     SELECTED_PIECE <= true;
                 end if;
             end if;
-            if Y_COORD >= 0 and Y_COORD <= 7 and X_COORD >= 0 and X_COORD <= 7 and white_pieces(Y_COORD, X_COORD) = '0' and black_pieces(Y_COORD, X_COORD) = '0' then
+            if Y_COORD >= 0 and Y_COORD <= 7 and X_COORD >= 0 and X_COORD <= 7 and white_pieces(Y_COORD, X_COORD) = 0 and black_pieces(Y_COORD, X_COORD) = 0 then
                 if (BTND = '1' and SELECTED_PIECE = true and TURN = '0') then -- white turn
                     if Y_COORD = CHOSEN_Y-1 and X_COORD = CHOSEN_X+1 then -- non capturing move
-                        white_pieces(CHOSEN_Y, CHOSEN_X) <= '0';
-                        white_pieces(Y_COORD, X_COORD) <= '1';
+                        white_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
+                        white_pieces(Y_COORD, X_COORD) <= 1;
                         legal_moves <= ((-1,-1),(-1,-1),(-1,-1),(-1,-1));
                         SELECTED_PIECE <= false;
                         Q <= "00001100";
@@ -254,8 +287,8 @@ begin
                         CHOSEN_Y <= -1;
                         CHOSEN_X <= -1;
                     elsif Y_COORD = CHOSEN_Y-1 and X_COORD = CHOSEN_X-1 then -- non capturing move
-                        white_pieces(CHOSEN_Y, CHOSEN_X) <= '0';
-                        white_pieces(Y_COORD, X_COORD) <= '1';
+                        white_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
+                        white_pieces(Y_COORD, X_COORD) <= 1;
                         legal_moves <= ((-1,-1),(-1,-1),(-1,-1),(-1,-1));
                         SELECTED_PIECE <= false;
                         Q <= "00001100";
@@ -263,10 +296,10 @@ begin
                         -- dirty and repetitive, but works for now
                         CHOSEN_Y <= -1;
                         CHOSEN_X <= -1;
-                    elsif Y_COORD = CHOSEN_Y-2 and X_COORD = CHOSEN_X+2 and black_pieces(CHOSEN_Y-1, CHOSEN_X+1) = '1' then -- capturing move, turn should not change
-                        white_pieces(CHOSEN_Y, CHOSEN_X) <= '0';
-                        white_pieces(Y_COORD, X_COORD) <= '1';
-                        black_pieces(CHOSEN_Y-1, CHOSEN_X+1) <= '0';
+                    elsif Y_COORD = CHOSEN_Y-2 and X_COORD = CHOSEN_X+2 and black_pieces(CHOSEN_Y-1, CHOSEN_X+1) = 1 then -- capturing move, turn should not change
+                        white_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
+                        white_pieces(Y_COORD, X_COORD) <= 1;
+                        black_pieces(CHOSEN_Y-1, CHOSEN_X+1) <= 0;
                         legal_moves <= ((-1,-1),(-1,-1),(-1,-1),(-1,-1));
                         SELECTED_PIECE <= false;
                         Q <= "00001100";
@@ -274,10 +307,10 @@ begin
                         -- dirty and repetitive, but works for now
                         CHOSEN_Y <= -1;
                         CHOSEN_X <= -1;
-                    elsif Y_COORD = CHOSEN_Y-2 and X_COORD = CHOSEN_X-2 and black_pieces(CHOSEN_Y-1, CHOSEN_X-1) = '1' then -- capturing move, turn should not change
-                        white_pieces(CHOSEN_Y, CHOSEN_X) <= '0';
-                        white_pieces(Y_COORD, X_COORD) <= '1';
-                        black_pieces(CHOSEN_Y-1, CHOSEN_X-1) <= '0';
+                    elsif Y_COORD = CHOSEN_Y-2 and X_COORD = CHOSEN_X-2 and black_pieces(CHOSEN_Y-1, CHOSEN_X-1) = 1 then -- capturing move, turn should not change
+                        white_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
+                        white_pieces(Y_COORD, X_COORD) <= 1;
+                        black_pieces(CHOSEN_Y-1, CHOSEN_X-1) <= 0;
                         legal_moves <= ((-1,-1),(-1,-1),(-1,-1),(-1,-1));
                         SELECTED_PIECE <= false;
                         Q <= "00001100";
@@ -289,8 +322,8 @@ begin
                 end if;
                 if (BTND = '1' and SELECTED_PIECE = true and TURN = '1') then -- black turn
                     if Y_COORD = CHOSEN_Y+1 and X_COORD = CHOSEN_X-1 then -- non capturing move
-                        black_pieces(CHOSEN_Y, CHOSEN_X) <= '0';
-                        black_pieces(Y_COORD, X_COORD) <= '1';
+                        black_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
+                        black_pieces(Y_COORD, X_COORD) <= 1;
                         legal_moves <= ((-1,-1),(-1,-1),(-1,-1),(-1,-1));
                         SELECTED_PIECE <= false;
                         Q <= "00001100";
@@ -299,8 +332,8 @@ begin
                         CHOSEN_Y <= -1;
                         CHOSEN_X <= -1;
                     elsif Y_COORD = CHOSEN_Y+1 and X_COORD = CHOSEN_X+1 then -- non capturing move
-                        black_pieces(CHOSEN_Y, CHOSEN_X) <= '0';
-                        black_pieces(Y_COORD, X_COORD) <= '1';
+                        black_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
+                        black_pieces(Y_COORD, X_COORD) <= 1;
                         legal_moves <= ((-1,-1),(-1,-1),(-1,-1),(-1,-1));
                         SELECTED_PIECE <= false;
                         Q <= "00001100";
@@ -308,10 +341,10 @@ begin
                         -- dirty and repetitive, but works for now
                         CHOSEN_Y <= -1;
                         CHOSEN_X <= -1;
-                    elsif Y_COORD = CHOSEN_Y+2 and X_COORD = CHOSEN_X-2 and white_pieces(CHOSEN_Y+1, CHOSEN_X-1) = '1' then -- capturing move, turn should not change
-                        black_pieces(CHOSEN_Y, CHOSEN_X) <= '0';
-                        black_pieces(Y_COORD, X_COORD) <= '1';
-                        white_pieces(CHOSEN_Y+1, CHOSEN_X-1) <= '0';
+                    elsif Y_COORD = CHOSEN_Y+2 and X_COORD = CHOSEN_X-2 and white_pieces(CHOSEN_Y+1, CHOSEN_X-1) = 1 then -- capturing move, turn should not change
+                        black_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
+                        black_pieces(Y_COORD, X_COORD) <= 1;
+                        white_pieces(CHOSEN_Y+1, CHOSEN_X-1) <= 0;
                         legal_moves <= ((-1,-1),(-1,-1),(-1,-1),(-1,-1));
                         SELECTED_PIECE <= false;
                         Q <= "00001100";
@@ -319,10 +352,10 @@ begin
                         -- dirty and repetitive, but works for now
                         CHOSEN_Y <= -1;
                         CHOSEN_X <= -1;
-                    elsif Y_COORD = CHOSEN_Y+2 and X_COORD = CHOSEN_X+2 and white_pieces(CHOSEN_Y+1, CHOSEN_X+1) = '1' then -- capturing move, turn should not change
-                        black_pieces(CHOSEN_Y, CHOSEN_X) <= '0';
-                        black_pieces(Y_COORD, X_COORD) <= '1';
-                        white_pieces(CHOSEN_Y+1, CHOSEN_X+1) <= '0';
+                    elsif Y_COORD = CHOSEN_Y+2 and X_COORD = CHOSEN_X+2 and white_pieces(CHOSEN_Y+1, CHOSEN_X+1) = 1 then -- capturing move, turn should not change
+                        black_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
+                        black_pieces(Y_COORD, X_COORD) <= 1;
+                        white_pieces(CHOSEN_Y+1, CHOSEN_X+1) <= 0;
                         legal_moves <= ((-1,-1),(-1,-1),(-1,-1),(-1,-1));
                         SELECTED_PIECE <= false;
                         Q <= "00001100";

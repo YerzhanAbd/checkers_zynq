@@ -16,8 +16,8 @@ entity vga_driver is
         clk50MHz: in std_logic;        
         hsync, vsync: out std_logic;        
         red, green, blue : out std_logic_vector(3 downto 0);
-        white_pieces: IN board;
-        black_pieces: IN board;
+        white_pieces: IN pieces;
+        black_pieces: IN pieces;
         MOVE_X, MOVE_Y : IN INTEGER;
         CHOSEN_X, CHOSEN_Y : IN INTEGER;
         legal_moves : IN legalMoves
@@ -162,11 +162,11 @@ begin
                     else
                         if ((hcount >= H_PIECE_TOP_LEFT + X_COORD * 50 and hcount < H_PIECE_TOP_LEFT + X_COORD * 50 + PIECE_LENGTH) and 
                     (vcount >= Y_COORD * 50 + V_PIECE_TOP_LEFT and vcount < V_PIECE_TOP_LEFT + Y_COORD * 50 + PIECE_LENGTH)) then 
-                            if (white_pieces(Y_COORD, X_COORD) = '1') then
+                            if (white_pieces(Y_COORD, X_COORD) = 1) then
                                 red <= "1111";
                                 green <= "1111";
                                 blue <= "1111";
-                            elsif (black_pieces(Y_COORD, X_COORD) = '1') then
+                            elsif (black_pieces(Y_COORD, X_COORD) = 1) then
                                 red <= "0000";
                                 green <= "0000";
                                 blue <= "0000";

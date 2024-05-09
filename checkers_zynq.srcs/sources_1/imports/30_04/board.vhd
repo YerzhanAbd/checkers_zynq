@@ -4,6 +4,7 @@ use IEEE.STD_LOGIC_UNSIGNED.all;
 
 package boardPckg is
     type board is array (0 to 7,0 to 7) of std_logic;
+    type pieces is array (0 to 7,0 to 7) of integer;
 end package boardPckg;
 
 package legalMovesPckg is

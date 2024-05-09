@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Thu May  9 12:15:13 2024
+| Date         : Thu May  9 12:42:22 2024
 | Host         : LAPTOP-7GF0693T running 64-bit major release  (build 9200)
 | Command      : report_methodology -file project_methodology_drc_routed.rpt -pb project_methodology_drc_routed.pb -rpx project_methodology_drc_routed.rpx
 | Design       : project
@@ -1681,162 +1681,162 @@ Related violations: <none>
 
 TIMING-23#1 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X[31]_i_29/I0 and CHOSEN_X[31]_i_29/O to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X[31]_i_216/I1 and CHOSEN_X[31]_i_216/O to disable the timing loop
 Related violations: <none>
 
 TIMING-23#2 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_125/S[0] and CHOSEN_X_reg[31]_i_125/O[0] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_118/S[0] and CHOSEN_X_reg[31]_i_118/O[0] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#3 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_125/S[1] and CHOSEN_X_reg[31]_i_125/O[1] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_118/S[1] and CHOSEN_X_reg[31]_i_118/O[1] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#4 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_125/S[2] and CHOSEN_X_reg[31]_i_125/O[2] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_118/S[2] and CHOSEN_X_reg[31]_i_118/O[2] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#5 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_125/S[3] and CHOSEN_X_reg[31]_i_125/O[3] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_118/S[3] and CHOSEN_X_reg[31]_i_118/O[3] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#6 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_134/S[0] and CHOSEN_X_reg[31]_i_134/O[0] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_119/S[0] and CHOSEN_X_reg[31]_i_119/O[0] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#7 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_134/S[1] and CHOSEN_X_reg[31]_i_134/O[1] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_119/S[1] and CHOSEN_X_reg[31]_i_119/O[1] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#8 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_134/S[2] and CHOSEN_X_reg[31]_i_134/O[2] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_119/S[2] and CHOSEN_X_reg[31]_i_119/O[2] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#9 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_134/S[3] and CHOSEN_X_reg[31]_i_134/O[3] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_119/S[3] and CHOSEN_X_reg[31]_i_119/O[3] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#10 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_59/S[0] and CHOSEN_X_reg[31]_i_59/O[0] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_120/S[0] and CHOSEN_X_reg[31]_i_120/O[0] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#11 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_59/S[1] and CHOSEN_X_reg[31]_i_59/O[1] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_120/S[1] and CHOSEN_X_reg[31]_i_120/O[1] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#12 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_59/S[2] and CHOSEN_X_reg[31]_i_59/O[2] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_120/S[2] and CHOSEN_X_reg[31]_i_120/O[2] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#13 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_59/S[3] and CHOSEN_X_reg[31]_i_59/O[3] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_120/S[3] and CHOSEN_X_reg[31]_i_120/O[3] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#14 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_61/S[0] and CHOSEN_X_reg[31]_i_61/O[0] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_71/S[0] and CHOSEN_X_reg[31]_i_71/O[0] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#15 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_61/S[1] and CHOSEN_X_reg[31]_i_61/O[1] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_71/S[1] and CHOSEN_X_reg[31]_i_71/O[1] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#16 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_61/S[2] and CHOSEN_X_reg[31]_i_61/O[2] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_71/S[2] and CHOSEN_X_reg[31]_i_71/O[2] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#17 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_61/S[3] and CHOSEN_X_reg[31]_i_61/O[3] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_71/S[3] and CHOSEN_X_reg[31]_i_71/O[3] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#18 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_62/S[0] and CHOSEN_X_reg[31]_i_62/O[0] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_72/S[1] and CHOSEN_X_reg[31]_i_72/O[1] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#19 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_62/S[1] and CHOSEN_X_reg[31]_i_62/O[1] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_72/S[2] and CHOSEN_X_reg[31]_i_72/O[2] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#20 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_62/S[2] and CHOSEN_X_reg[31]_i_62/O[2] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_72/S[3] and CHOSEN_X_reg[31]_i_72/O[3] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#21 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_62/S[3] and CHOSEN_X_reg[31]_i_62/O[3] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_74/S[0] and CHOSEN_X_reg[31]_i_74/O[0] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#22 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_63/S[0] and CHOSEN_X_reg[31]_i_63/O[0] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_74/S[1] and CHOSEN_X_reg[31]_i_74/O[1] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#23 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_63/S[1] and CHOSEN_X_reg[31]_i_63/O[1] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_74/S[2] and CHOSEN_X_reg[31]_i_74/O[2] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#24 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_63/S[2] and CHOSEN_X_reg[31]_i_63/O[2] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_74/S[3] and CHOSEN_X_reg[31]_i_74/O[3] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#25 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_63/S[3] and CHOSEN_X_reg[31]_i_63/O[3] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_75/S[0] and CHOSEN_X_reg[31]_i_75/O[0] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#26 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_65/S[1] and CHOSEN_X_reg[31]_i_65/O[1] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_75/S[1] and CHOSEN_X_reg[31]_i_75/O[1] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#27 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_65/S[2] and CHOSEN_X_reg[31]_i_65/O[2] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_75/S[2] and CHOSEN_X_reg[31]_i_75/O[2] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#28 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_65/S[3] and CHOSEN_X_reg[31]_i_65/O[3] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_75/S[3] and CHOSEN_X_reg[31]_i_75/O[3] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#29 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_66/S[0] and CHOSEN_X_reg[31]_i_66/O[0] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_77/S[0] and CHOSEN_X_reg[31]_i_77/O[0] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#30 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_66/S[1] and CHOSEN_X_reg[31]_i_66/O[1] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_77/S[1] and CHOSEN_X_reg[31]_i_77/O[1] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#31 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_66/S[2] and CHOSEN_X_reg[31]_i_66/O[2] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_77/S[2] and CHOSEN_X_reg[31]_i_77/O[2] to disable the timing loop
 Related violations: <none>
 
 TIMING-23#32 Warning
 Combinational loop found  
-A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_66/S[3] and CHOSEN_X_reg[31]_i_66/O[3] to disable the timing loop
+A timing loop has been detected on a combinational path. A timing arc has been disabled between CHOSEN_X_reg[31]_i_77/S[3] and CHOSEN_X_reg[31]_i_77/O[3] to disable the timing loop
 Related violations: <none>
 
 

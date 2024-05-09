@@ -274,7 +274,7 @@ begin
                 TURN <= not TURN;
                 SELECTED_PIECE <= false;
             end if;
-            if Y_COORD >= 0 and Y_COORD <= 7 and X_COORD >= 0 and X_COORD <= 7 and legal_moves(Y_COORD, X_COORD) = '1' and white_pieces(Y_COORD, X_COORD) = 0 and black_pieces(Y_COORD, X_COORD) = 0 then
+            if Y_COORD >= 0 and Y_COORD <= 7 and X_COORD >= 0 and X_COORD <= 7 and legal_moves(Y_COORD, X_COORD) = '1' then
                 if (BTND = '1' and SELECTED_PIECE = true and TURN = '0') then -- white turn
                     if Y_COORD = CHOSEN_Y-1 and X_COORD = CHOSEN_X+1 then -- non capturing move
                         white_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
@@ -294,21 +294,19 @@ begin
                         -- dirty and repetitive, but works for now
                         CHOSEN_Y <= -1;
                         CHOSEN_X <= -1;
-                    elsif Y_COORD = CHOSEN_Y-2 and X_COORD = CHOSEN_X+2 and black_pieces(CHOSEN_Y-1, CHOSEN_X+1) = 1 then -- capturing move, turn should not change
+                    elsif Y_COORD = CHOSEN_Y-2 and X_COORD = CHOSEN_X+2 then -- capturing move, turn should not change
                         white_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
                         white_pieces(Y_COORD, X_COORD) <= 1;
                         black_pieces(CHOSEN_Y-1, CHOSEN_X+1) <= 0;
---                        SELECTED_PIECE <= false;
                         STATE <= 3;
                         TURN <= '0';
                         -- dirty and repetitive, but works for now
                         CHOSEN_Y <= Y_COORD;
                         CHOSEN_X <= X_COORD;
-                    elsif Y_COORD = CHOSEN_Y-2 and X_COORD = CHOSEN_X-2 and black_pieces(CHOSEN_Y-1, CHOSEN_X-1) = 1 then -- capturing move, turn should not change
+                    elsif Y_COORD = CHOSEN_Y-2 and X_COORD = CHOSEN_X-2 then -- capturing move, turn should not change
                         white_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
                         white_pieces(Y_COORD, X_COORD) <= 1;
                         black_pieces(CHOSEN_Y-1, CHOSEN_X-1) <= 0;
-                        SELECTED_PIECE <= false;
                         STATE <= 3;
                         TURN <= '0';
                         -- dirty and repetitive, but works for now
@@ -335,17 +333,16 @@ begin
                         -- dirty and repetitive, but works for now
                         CHOSEN_Y <= -1;
                         CHOSEN_X <= -1;
-                    elsif Y_COORD = CHOSEN_Y+2 and X_COORD = CHOSEN_X-2 and white_pieces(CHOSEN_Y+1, CHOSEN_X-1) = 1 then -- capturing move, turn should not change
+                    elsif Y_COORD = CHOSEN_Y+2 and X_COORD = CHOSEN_X-2 then -- capturing move, turn should not change
                         black_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
                         black_pieces(Y_COORD, X_COORD) <= 1;
                         white_pieces(CHOSEN_Y+1, CHOSEN_X-1) <= 0;
---                        SELECTED_PIECE <= false;
                         STATE <= 3;
                         TURN <= '1';
                         -- dirty and repetitive, but works for now
                         CHOSEN_Y <= Y_COORD;
                         CHOSEN_X <= X_COORD;
-                    elsif Y_COORD = CHOSEN_Y+2 and X_COORD = CHOSEN_X+2 and white_pieces(CHOSEN_Y+1, CHOSEN_X+1) = 1 then -- capturing move, turn should not change
+                    elsif Y_COORD = CHOSEN_Y+2 and X_COORD = CHOSEN_X+2 then -- capturing move, turn should not change
                         black_pieces(CHOSEN_Y, CHOSEN_X) <= 0;
                         black_pieces(Y_COORD, X_COORD) <= 1;
                         white_pieces(CHOSEN_Y+1, CHOSEN_X+1) <= 0;

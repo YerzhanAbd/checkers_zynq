@@ -3,8 +3,8 @@
 # SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
 # IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
 # SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
-# Start of session at: Thu May  9 16:42:51 2024
-# Process ID: 32428
+# Start of session at: Thu May  9 21:37:51 2024
+# Process ID: 36948
 # Current directory: C:/University/FPGA/checkers_zynq/checkers_zynq.runs/synth_1
 # Command line: vivado.exe -log project.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source project.tcl
 # Log file: C:/University/FPGA/checkers_zynq/checkers_zynq.runs/synth_1/project.vds
@@ -12,6 +12,7 @@
 # Running On: LAPTOP-7GF0693T, OS: Windows, CPU Frequency: 3294 MHz, CPU Physical cores: 16, Host memory: 16354 MB
 #-----------------------------------------------------------
 source project.tcl -notrace
+create_project: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 566.082 ; gain = 183.547
 Command: read_checkpoint -auto_incremental -incremental C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/utils_1/imports/synth_1/project.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/utils_1/imports/synth_1/project.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -20,14 +21,13 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg484-1
-INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
-INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 37144
+INFO: [Synth 8-7075] Helper process launched with PID 31680
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1430.992 ; gain = 439.535
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1428.387 ; gain = 438.285
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-2551] possible infinite loop; process does not have a wait statement [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:143]
 INFO: [Synth 8-638] synthesizing module 'project' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:28]
 WARNING: [Synth 8-614] signal 'STATE' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:140]
 WARNING: [Synth 8-614] signal 'CHOSEN_X' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:140]
@@ -67,29 +67,17 @@ INFO: [Synth 8-638] synthesizing module 'clock_divider__parameterized3' [C:/Univ
 INFO: [Synth 8-256] done synthesizing module 'clock_divider__parameterized3' (0#1) [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/clock_divider.vhd:11]
 INFO: [Synth 8-3491] module 'vga_driver' declared at 'C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:13' bound to instance 'vga_display' of component 'vga_driver' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:167]
 INFO: [Synth 8-638] synthesizing module 'vga_driver' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:27]
-WARNING: [Synth 8-614] signal 'H_INNER_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:103]
-WARNING: [Synth 8-614] signal 'V_INNER_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:103]
-WARNING: [Synth 8-614] signal 'square_colors' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:103]
-WARNING: [Synth 8-614] signal 'Y_COORD' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:103]
-WARNING: [Synth 8-614] signal 'X_COORD' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:103]
-WARNING: [Synth 8-614] signal 'legal_moves' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:103]
-WARNING: [Synth 8-614] signal 'CHOSEN_X' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:103]
-WARNING: [Synth 8-614] signal 'CHOSEN_Y' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:103]
-WARNING: [Synth 8-614] signal 'MOVE_X' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:103]
-WARNING: [Synth 8-614] signal 'MOVE_Y' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:103]
-WARNING: [Synth 8-614] signal 'H_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
-WARNING: [Synth 8-614] signal 'V_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
-WARNING: [Synth 8-614] signal 'H_INNER_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
-WARNING: [Synth 8-614] signal 'H_INNER_BOT_RIGHT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
-WARNING: [Synth 8-614] signal 'V_INNER_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
-WARNING: [Synth 8-614] signal 'V_INNER_BOT_RIGHT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
-WARNING: [Synth 8-614] signal 'H_PIECE_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
-WARNING: [Synth 8-614] signal 'X_COORD' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
-WARNING: [Synth 8-614] signal 'Y_COORD' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
-WARNING: [Synth 8-614] signal 'V_PIECE_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
-WARNING: [Synth 8-614] signal 'white_pieces' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
-WARNING: [Synth 8-614] signal 'black_pieces' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
-WARNING: [Synth 8-614] signal 'SQUARE_COLOR' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:140]
+WARNING: [Synth 8-614] signal 'H_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:145]
+WARNING: [Synth 8-614] signal 'V_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:145]
+WARNING: [Synth 8-614] signal 'H_INNER_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:145]
+WARNING: [Synth 8-614] signal 'H_INNER_BOT_RIGHT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:145]
+WARNING: [Synth 8-614] signal 'V_INNER_TOP_LEFT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:145]
+WARNING: [Synth 8-614] signal 'V_INNER_BOT_RIGHT' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:145]
+WARNING: [Synth 8-614] signal 'X_COORD' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:145]
+WARNING: [Synth 8-614] signal 'Y_COORD' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:145]
+WARNING: [Synth 8-614] signal 'white_pieces' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:145]
+WARNING: [Synth 8-614] signal 'black_pieces' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:145]
+WARNING: [Synth 8-614] signal 'SQUARE_COLOR' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:145]
 INFO: [Synth 8-256] done synthesizing module 'vga_driver' (0#1) [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:27]
 WARNING: [Synth 8-614] signal 'MOVE_X' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:182]
 WARNING: [Synth 8-614] signal 'MOVE_Y' is read in the process but is not in the sensitivity list [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:182]
@@ -103,18 +91,18 @@ INFO: [Synth 8-256] done synthesizing module 'project' (0#1) [C:/University/FPGA
 WARNING: [Synth 8-7129] Port BTNU in module project is either unconnected or has no load
 WARNING: [Synth 8-7129] Port BTND in module project is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1852.359 ; gain = 860.902
+Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 2027.234 ; gain = 1037.133
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1852.359 ; gain = 860.902
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2027.234 ; gain = 1037.133
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1852.359 ; gain = 860.902
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 2027.234 ; gain = 1037.133
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.390 . Memory (MB): peak = 1852.359 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.542 . Memory (MB): peak = 2027.234 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -139,87 +127,126 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/project_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1953.938 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 2053.938 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.065 . Memory (MB): peak = 1953.938 ; gain = 0.000
-INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
-INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.095 . Memory (MB): peak = 2053.938 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1953.938 ; gain = 962.480
+Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 2053.938 ; gain = 1063.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1953.938 ; gain = 962.480
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 2053.938 ; gain = 1063.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1953.938 ; gain = 962.480
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:34 . Memory (MB): peak = 2053.938 ; gain = 1063.836
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'pmod_joystick'
----------------------------------------------------------------------------------------------------
-                   State |                     New Encoding |                Previous Encoding 
----------------------------------------------------------------------------------------------------
-                   start |                              000 |                              000
-    initiate_transaction |                              001 |                              001
-           byte_transact |                              010 |                              010
-              byte_pause |                              011 |                              011
-          output_results |                              100 |                              100
----------------------------------------------------------------------------------------------------
-INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'pmod_joystick'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 1953.938 ; gain = 962.480
+Start Preparing Guide Design
 ---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Doing Graph Differ : Time (s): cpu = 00:00:34 ; elapsed = 00:00:39 . Memory (MB): peak = 2053.938 ; gain = 1063.836
+---------------------------------------------------------------------------------
+project__GB6project__GB5project__GB4project__GB3project__GB2project__GB1---------------------------------------------------------------------------------
+Finished Preparing Guide Design : Time (s): cpu = 00:00:35 ; elapsed = 00:00:40 . Memory (MB): peak = 2053.938 ; gain = 1063.836
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 'red_reg' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:162]
+WARNING: [Synth 8-327] inferring latch for variable 'green_reg' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:163]
+WARNING: [Synth 8-327] inferring latch for variable 'blue_reg' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:164]
+WARNING: [Synth 8-327] inferring latch for variable 'SQUARE_COLOR_reg' [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:129]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 2053.938 ; gain = 1063.836
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Mimic Skeleton from Reference
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Mimic Skeleton from Reference : Time (s): cpu = 00:00:39 ; elapsed = 00:00:44 . Memory (MB): peak = 2053.938 ; gain = 1063.836
+---------------------------------------------------------------------------------
+
+
+Incremental Synthesis Report Summary:
+
+1. Incremental synthesis run: yes
+
+   Stitch points used : changed
+
+
+2. Change Summary
+
+Report Incremental Modules: 
++------+----------------+------------+----------+----------+
+|      |Changed Modules |Replication |Instances |Changed % |
++------+----------------+------------+----------+----------+
+|1     |vga_driver      |           1|     16749|   15.6484|
++------+----------------+------------+----------+----------+
+
+
+   Full Design Size (number of cells) : 107033
+   Resynthesis Design Size (number of cells) : 23040
+   Resynth % : 21.5261,  Reuse % : 78.4739
+
+3. Reference Checkpoint Information
+
++----------------------------------------------------------------------------------------------------------+
+| DCP Location:  | C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/utils_1/imports/synth_1/project.dcp |
++----------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------+------------------------------+
+|         DCP Information        |             Value            |
++--------------------------------+------------------------------+
+| Vivado Version                 |                    v2023.2 |
+| DCP State                      |                              |
++--------------------------------+------------------------------+
+
+
+
+Report RTL Partitions: 
++------+---------------------+------------+----------+
+|      |RTL Partition        |Replication |Instances |
++------+---------------------+------------+----------+
+|1     |project__GB0         |           1|     23040|
+|2     |project__GB1_#REUSE# |           1|         0|
+|3     |project__GB2_#REUSE# |           1|         0|
+|4     |project__GB3_#REUSE# |           1|         0|
+|5     |project__GB4_#REUSE# |           1|         0|
+|6     |project__GB5_#REUSE# |           1|         0|
+|7     |project__GB6_#REUSE# |           1|         0|
++------+---------------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
 	   3 Input   33 Bit       Adders := 2     
-	   2 Input   32 Bit       Adders := 47    
-	   2 Input   31 Bit       Adders := 2     
-	   2 Input   24 Bit       Adders := 1     
-	   3 Input    6 Bit       Adders := 1     
-	   2 Input    5 Bit       Adders := 4     
-	   2 Input    3 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 16    
+	   3 Input   32 Bit       Adders := 4     
+	   2 Input   31 Bit       Adders := 4     
 +---Registers : 
-	               32 Bit    Registers := 138   
-	               24 Bit    Registers := 1     
-	               18 Bit    Registers := 1     
-	                8 Bit    Registers := 5     
-	                5 Bit    Registers := 2     
-	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 15    
+	               32 Bit    Registers := 2     
 +---Multipliers : 
 	               7x32  Multipliers := 2     
+	              32x32  Multipliers := 2     
 +---Muxes : 
-	   2 Input   32 Bit        Muxes := 15    
-	   5 Input   32 Bit        Muxes := 3     
-	   2 Input   31 Bit        Muxes := 2     
-	   2 Input   24 Bit        Muxes := 4     
-	   5 Input   24 Bit        Muxes := 1     
-	   2 Input   18 Bit        Muxes := 3     
-	   5 Input   18 Bit        Muxes := 1     
-	   2 Input    8 Bit        Muxes := 3     
-	   5 Input    6 Bit        Muxes := 1     
-	   2 Input    5 Bit        Muxes := 3     
+	   2 Input   32 Bit        Muxes := 5     
+	   2 Input   31 Bit        Muxes := 4     
+	   4 Input    6 Bit        Muxes := 1     
 	   5 Input    4 Bit        Muxes := 2     
-	   2 Input    4 Bit        Muxes := 22    
 	   3 Input    4 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 6     
-	   5 Input    3 Bit        Muxes := 1     
-	   2 Input    2 Bit        Muxes := 4     
-	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 15    
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
+	   6 Input    1 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 5     
 	   8 Input    1 Bit        Muxes := 3     
-	   2 Input    1 Bit        Muxes := 9159  
-	   3 Input    1 Bit        Muxes := 1     
-	   5 Input    1 Bit        Muxes := 7     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -235,408 +262,165 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 WARNING: [Synth 8-7129] Port BTNU in module project is either unconnected or has no load
 WARNING: [Synth 8-7129] Port BTND in module project is either unconnected or has no load
+INFO: [Synth 8-5545] ROM "p_0_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "p_0_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "p_0_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:168]
+INFO: [Synth 8-5845] Not enough pipeline registers after wide multiplier. Recommended levels of pipeline registers is 4 [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/vga_driver.vhd:168]
+INFO: [Synth 8-5545] ROM "p_0_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "p_0_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "p_0_out" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+DSP Report: Generating DSP red3, operation Mode is: A*B.
+DSP Report: operator red3 is absorbed into DSP red3.
+DSP Report: operator red3 is absorbed into DSP red3.
+DSP Report: Generating DSP red3, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator red3 is absorbed into DSP red3.
+DSP Report: operator red3 is absorbed into DSP red3.
+DSP Report: Generating DSP red3, operation Mode is: A*B.
+DSP Report: operator red3 is absorbed into DSP red3.
+DSP Report: operator red3 is absorbed into DSP red3.
+DSP Report: Generating DSP red3, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator red3 is absorbed into DSP red3.
+DSP Report: operator red3 is absorbed into DSP red3.
+DSP Report: Generating DSP red3, operation Mode is: A*B.
+DSP Report: operator red3 is absorbed into DSP red3.
+DSP Report: operator red3 is absorbed into DSP red3.
+DSP Report: Generating DSP red3, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator red3 is absorbed into DSP red3.
+DSP Report: operator red3 is absorbed into DSP red3.
+DSP Report: Generating DSP red3, operation Mode is: A*B.
+DSP Report: operator red3 is absorbed into DSP red3.
+DSP Report: operator red3 is absorbed into DSP red3.
+DSP Report: Generating DSP red3, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: operator red3 is absorbed into DSP red3.
+DSP Report: operator red3 is absorbed into DSP red3.
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[30] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[29] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[28] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[27] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[26] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[25] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[24] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[23] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[22] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[21] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[20] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (vga_display/\SQUARE_COLOR_reg[3] )
+INFO: [Synth 8-3886] merging instance 'vga_display/blue_reg[2]' (LDP) to 'vga_display/blue_reg[3]'
+INFO: [Synth 8-3886] merging instance 'vga_display/green_reg[1]' (LDP) to 'vga_display/green_reg[3]'
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[30]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[29]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[28]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[27]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[26]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[25]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[24]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[23]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[22]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[21]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[20]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[19]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[18]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[17]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[16]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[15]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[14]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[13]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[12]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[11]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[10]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[9]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[8]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[7]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[6]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[5]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[4]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[3]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[2]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[1]) is unused and will be removed from module vga_driver.
+WARNING: [Synth 8-3332] Sequential element (SQUARE_COLOR_reg[0]) is unused and will be removed from module vga_driver.
+INFO: [Synth 8-3886] merging instance 'vga_display/blue_reg[0]' (LDP) to 'vga_display/green_reg[2]'
+INFO: [Synth 8-3886] merging instance 'vga_display/green_reg[2]' (LDP) to 'vga_display/red_reg[1]'
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:28 ; elapsed = 00:01:37 . Memory (MB): peak = 1953.938 ; gain = 962.480
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:01:01 . Memory (MB): peak = 2053.938 ; gain = 1063.836
+---------------------------------------------------------------------------------
+ Sort Area is project__GB0 red3_0 : 0 0 : 3101 5754 : Used 1 time 0
+ Sort Area is project__GB0 red3_0 : 0 1 : 2653 5754 : Used 1 time 0
+ Sort Area is project__GB0 red3_6 : 0 0 : 3101 5754 : Used 1 time 0
+ Sort Area is project__GB0 red3_6 : 0 1 : 2653 5754 : Used 1 time 0
+ Sort Area is project__GB0 red3_3 : 0 0 : 2634 5119 : Used 1 time 0
+ Sort Area is project__GB0 red3_3 : 0 1 : 2485 5119 : Used 1 time 0
+ Sort Area is project__GB0 red3_7 : 0 0 : 2634 5119 : Used 1 time 0
+ Sort Area is project__GB0 red3_7 : 0 1 : 2485 5119 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|vga_driver  | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|vga_driver  | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|vga_driver  | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|vga_driver  | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|vga_driver  | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|vga_driver  | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|vga_driver  | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|vga_driver  | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Stitch Unchanged AreaOpt Partitions
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Stitch Unchanged AreaOpt Partitions : Time (s): cpu = 00:00:42 ; elapsed = 00:01:02 . Memory (MB): peak = 2053.938 ; gain = 1063.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:32 ; elapsed = 00:01:41 . Memory (MB): peak = 1953.938 ; gain = 962.480
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:48 ; elapsed = 00:01:09 . Memory (MB): peak = 2053.938 ; gain = 1063.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:34 ; elapsed = 00:01:44 . Memory (MB): peak = 1953.938 ; gain = 962.480
+Finished Timing Optimization : Time (s): cpu = 00:02:10 ; elapsed = 00:02:53 . Memory (MB): peak = 6363.914 ; gain = 5373.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5838 -from S[1] -to O[1]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5838 -from S[2] -to O[2]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5839 -from S[0] -to O[0]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5839 -from S[1] -to O[1]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5839 -from S[2] -to O[2]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5839 -from S[3] -to O[3]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5840 -from S[0] -to O[0]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5840 -from S[1] -to O[1]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5840 -from S[2] -to O[2]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5840 -from S[3] -to O[3]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5841 -from S[0] -to O[0]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5841 -from S[1] -to O[1]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5841 -from S[2] -to O[2]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5841 -from S[3] -to O[3]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5842 -from S[0] -to O[0]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5842 -from S[1] -to O[1]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5842 -from S[2] -to O[2]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5842 -from S[3] -to O[3]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5843 -from S[0] -to O[0]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5843 -from S[2] -to O[2]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5843 -from S[3] -to O[3]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5844 -from S[1] -to O[1]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5844 -from S[2] -to O[2]'
-WARNING: [Synth 8-326] inferred exception to break timing loop: 'set_disable_timing i_5/i_5845 -from S[2] -to O[2]'
-Found timing loop:
-     0: i_16950/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16950/I0 (LUT2)
-     2: i_17207/O[0] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17207/S[0] (CARRY4)
-     4: i_16950/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16950"
-Found timing loop:
-     0: i_16589/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16589/I0 (LUT2)
-     2: i_17206/O[0] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17206/S[0] (CARRY4)
-     4: i_16589/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16589"
-Found timing loop:
-     0: i_16600/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16600/I0 (LUT2)
-     2: i_17205/O[0] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17205/S[0] (CARRY4)
-     4: i_16600/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16600"
-Found timing loop:
-     0: i_16590/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16590/I0 (LUT2)
-     2: i_17204/O[0] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17204/S[0] (CARRY4)
-     4: i_16590/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16590"
-Found timing loop:
-     0: i_16599/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16599/I0 (LUT2)
-     2: i_17203/O[0] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17203/S[0] (CARRY4)
-     4: i_16599/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16599"
-Found timing loop:
-     0: i_16573/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16573/I0 (LUT2)
-     2: i_17202/O[0] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17202/S[0] (CARRY4)
-     4: i_16573/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16573"
-Found timing loop:
-     0: i_14907/O (INV)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_14907/I (INV)
-     2: i_16581/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_16581/I0 (LUT2)
-     4: i_17201/O[0] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     5: i_17201/S[0] (CARRY4)
-     6: i_14907/O (INV)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I -to O i_14907"
-Found timing loop:
-     0: i_16577/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16577/I0 (LUT2)
-     2: i_17201/O[1] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17201/S[1] (CARRY4)
-     4: i_16577/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16577"
-Found timing loop:
-     0: i_16596/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16596/I0 (LUT2)
-     2: i_17201/O[2] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17201/S[2] (CARRY4)
-     4: i_16596/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16596"
-Found timing loop:
-     0: i_16952/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16952/I0 (LUT2)
-     2: i_17201/O[3] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17201/S[3] (CARRY4)
-     4: i_16952/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16952"
-Found timing loop:
-     0: i_16575/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16575/I0 (LUT2)
-     2: i_17202/O[1] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17202/S[1] (CARRY4)
-     4: i_16575/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16575"
-Found timing loop:
-     0: i_16584/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16584/I0 (LUT2)
-     2: i_17202/O[2] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17202/S[2] (CARRY4)
-     4: i_16584/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16584"
-Found timing loop:
-     0: i_16594/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16594/I0 (LUT2)
-     2: i_17202/O[3] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17202/S[3] (CARRY4)
-     4: i_16594/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16594"
-Found timing loop:
-     0: i_16601/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16601/I0 (LUT2)
-     2: i_17203/O[1] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17203/S[1] (CARRY4)
-     4: i_16601/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16601"
-Found timing loop:
-     0: i_16579/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16579/I0 (LUT2)
-     2: i_17203/O[2] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17203/S[2] (CARRY4)
-     4: i_16579/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16579"
-Found timing loop:
-     0: i_16574/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16574/I0 (LUT2)
-     2: i_17203/O[3] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17203/S[3] (CARRY4)
-     4: i_16574/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16574"
-Found timing loop:
-     0: i_16570/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16570/I0 (LUT2)
-     2: i_17204/O[1] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17204/S[1] (CARRY4)
-     4: i_16570/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16570"
-Found timing loop:
-     0: i_16591/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16591/I0 (LUT2)
-     2: i_17204/O[2] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17204/S[2] (CARRY4)
-     4: i_16591/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16591"
-Found timing loop:
-     0: i_16595/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16595/I0 (LUT2)
-     2: i_17204/O[3] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17204/S[3] (CARRY4)
-     4: i_16595/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16595"
-Found timing loop:
-     0: i_16568/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16568/I0 (LUT2)
-     2: i_17205/O[1] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17205/S[1] (CARRY4)
-     4: i_16568/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16568"
-Found timing loop:
-     0: i_16602/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16602/I0 (LUT2)
-     2: i_17205/O[2] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17205/S[2] (CARRY4)
-     4: i_16602/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16602"
-Found timing loop:
-     0: i_16585/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16585/I0 (LUT2)
-     2: i_17205/O[3] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17205/S[3] (CARRY4)
-     4: i_16585/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16585"
-Found timing loop:
-     0: i_16951/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16951/I0 (LUT2)
-     2: i_17206/O[1] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17206/S[1] (CARRY4)
-     4: i_16951/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16951"
-Found timing loop:
-     0: i_16571/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16571/I0 (LUT2)
-     2: i_17206/O[2] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17206/S[2] (CARRY4)
-     4: i_16571/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16571"
-Found timing loop:
-     0: i_16597/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16597/I0 (LUT2)
-     2: i_17206/O[3] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17206/S[3] (CARRY4)
-     4: i_16597/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16597"
-Found timing loop:
-     0: i_16586/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16586/I0 (LUT2)
-     2: i_17207/O[1] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17207/S[1] (CARRY4)
-     4: i_16586/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16586"
-Found timing loop:
-     0: i_17207/O[2] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_17207/S[2] (CARRY4)
-     2: i_16580/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_16580/I0 (LUT2)
-     4: i_17207/O[2] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from S[2] -to O[2] i_17207"
-Found timing loop:
-     0: i_16948/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16948/I0 (LUT2)
-     2: i_17208/O[0] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17208/S[0] (CARRY4)
-     4: i_16948/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16948"
-Found timing loop:
-     0: i_16949/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16949/I0 (LUT2)
-     2: i_17207/O[3] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17207/S[3] (CARRY4)
-     4: i_16949/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16949"
-Found timing loop:
-     0: i_16947/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16947/I0 (LUT2)
-     2: i_17208/O[1] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17208/S[1] (CARRY4)
-     4: i_16947/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16947"
-Found timing loop:
-     0: i_17208/O[2] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_17208/S[2] (CARRY4)
-     2: i_16588/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_16588/I0 (LUT2)
-     4: i_17208/O[2] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from S[2] -to O[2] i_17208"
-Found timing loop:
-     0: i_16946/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     1: i_16946/I0 (LUT2)
-     2: i_17208/O[3] (CARRY4)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-     3: i_17208/S[3] (CARRY4)
-     4: i_16946/O (LUT2)
-      [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:219]
-CRITICAL WARNING: [Synth 8-295] found timing loop. [C:/University/FPGA/checkers_zynq/checkers_zynq.srcs/sources_1/imports/30_04/lab05.vhd:9]
-Inferred a: "set_disable_timing -from I0 -to O i_16946"
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:41 ; elapsed = 00:01:51 . Memory (MB): peak = 1953.938 ; gain = 962.480
+Finished Technology Mapping : Time (s): cpu = 00:02:21 ; elapsed = 00:08:36 . Memory (MB): peak = 6363.914 ; gain = 5373.812
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Stitch Unchanged Partitions
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Stitch Unchanged Partitions : Time (s): cpu = 00:02:21 ; elapsed = 00:08:37 . Memory (MB): peak = 6363.914 ; gain = 5373.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -654,41 +438,54 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:46 ; elapsed = 00:01:56 . Memory (MB): peak = 1953.938 ; gain = 962.480
+Finished IO Insertion : Time (s): cpu = 00:02:26 ; elapsed = 00:08:42 . Memory (MB): peak = 6363.914 ; gain = 5373.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:46 ; elapsed = 00:01:56 . Memory (MB): peak = 1953.938 ; gain = 962.480
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:26 ; elapsed = 00:08:42 . Memory (MB): peak = 6363.914 ; gain = 5373.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:47 ; elapsed = 00:01:57 . Memory (MB): peak = 1953.938 ; gain = 962.480
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:27 ; elapsed = 00:08:43 . Memory (MB): peak = 6363.914 ; gain = 5373.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:47 ; elapsed = 00:01:57 . Memory (MB): peak = 1953.938 ; gain = 962.480
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:27 ; elapsed = 00:08:43 . Memory (MB): peak = 6363.914 ; gain = 5373.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:47 ; elapsed = 00:01:57 . Memory (MB): peak = 1953.938 ; gain = 962.480
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:27 ; elapsed = 00:08:43 . Memory (MB): peak = 6363.914 ; gain = 5373.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:47 ; elapsed = 00:01:57 . Memory (MB): peak = 1953.938 ; gain = 962.480
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:27 ; elapsed = 00:08:44 . Memory (MB): peak = 6363.914 ; gain = 5373.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping  | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|vga_driver  | A*B          | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|vga_driver  | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|vga_driver  | PCIN>>17+A*B | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|vga_driver  | A*B          | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|vga_driver  | A*B          | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|vga_driver  | PCIN>>17+A*B | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++------------+--------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
 
 Report BlackBoxes: 
 +-+--------------+----------+
@@ -697,48 +494,53 @@ Report BlackBoxes:
 +-+--------------+----------+
 
 Report Cell Usage: 
-+------+-------+------+
-|      |Cell   |Count |
-+------+-------+------+
-|1     |BUFG   |     3|
-|2     |CARRY4 |   810|
-|3     |LUT1   |   604|
-|4     |LUT2   |  1434|
-|5     |LUT3   |   884|
-|6     |LUT4   |   894|
-|7     |LUT5   |  1913|
-|8     |LUT6   | 10132|
-|9     |MUXF7  |  2510|
-|10    |MUXF8  |   302|
-|11    |FDRE   |  4482|
-|12    |FDSE   |   132|
-|13    |IBUF   |     2|
-|14    |OBUF   |    32|
-|15    |OBUFT  |     1|
-+------+-------+------+
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     3|
+|2     |CARRY4  |  1101|
+|3     |DSP48E1 |     6|
+|4     |LUT1    |   666|
+|5     |LUT2    |  2050|
+|6     |LUT3    |  1556|
+|7     |LUT4    |  1466|
+|8     |LUT5    |  1986|
+|9     |LUT6    | 11510|
+|10    |MUXF7   |  2678|
+|11    |MUXF8   |   302|
+|12    |FDRE    |  4464|
+|13    |FDSE    |   133|
+|14    |LD      |     1|
+|15    |LDP     |     8|
+|16    |IBUF    |     2|
+|17    |OBUF    |    32|
+|18    |OBUFT   |     1|
++------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:47 ; elapsed = 00:01:57 . Memory (MB): peak = 1953.938 ; gain = 962.480
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:27 ; elapsed = 00:08:44 . Memory (MB): peak = 6363.914 ; gain = 5373.812
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 32 critical warnings and 27 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:30 ; elapsed = 00:01:53 . Memory (MB): peak = 1953.938 ; gain = 860.902
-Synthesis Optimization Complete : Time (s): cpu = 00:01:47 ; elapsed = 00:01:58 . Memory (MB): peak = 1953.938 ; gain = 962.480
+Synthesis finished with 0 errors, 0 critical warnings and 37 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:03 ; elapsed = 00:08:39 . Memory (MB): peak = 6363.914 ; gain = 5347.109
+Synthesis Optimization Complete : Time (s): cpu = 00:02:27 ; elapsed = 00:08:46 . Memory (MB): peak = 6363.914 ; gain = 5373.812
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.228 . Memory (MB): peak = 1953.938 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 3622 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.267 . Memory (MB): peak = 6363.914 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 4096 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1953.938 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 6363.914 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 9 instances were transformed.
+  LD => LDCE: 1 instance 
+  LDP => LDPE: 8 instances
 
-Synth Design complete | Checksum: 6e1d49fe
+Synth Design complete | Checksum: ab79a3e8
 INFO: [Common 17-83] Releasing license: Synthesis
-47 Infos, 71 Warnings, 36 Critical Warnings and 0 Errors encountered.
+81 Infos, 70 Warnings, 4 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:54 ; elapsed = 00:02:05 . Memory (MB): peak = 1953.938 ; gain = 1385.160
+synth_design: Time (s): cpu = 00:02:34 ; elapsed = 00:08:59 . Memory (MB): peak = 6363.914 ; gain = 5793.859
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.036 . Memory (MB): peak = 1953.938 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.045 . Memory (MB): peak = 6363.914 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/University/FPGA/checkers_zynq/checkers_zynq.runs/synth_1/project.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file project_utilization_synth.rpt -pb project_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu May  9 16:45:05 2024...
+INFO: [Common 17-206] Exiting Vivado at Thu May  9 21:47:07 2024...

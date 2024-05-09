@@ -57,6 +57,7 @@ architecture vga_driver_arch of vga_driver is
     signal V_INNER_BOT_RIGHT: integer := V_TOP_LEFT + LENGTH - 50;
     
     constant PIECE_LENGTH : integer := 30;
+    constant PIECE_RADIUS : integer := 225;
     signal H_PIECE_TOP_LEFT : integer := H_INNER_TOP_LEFT + 10;
     signal V_PIECE_TOP_LEFT : integer := V_INNER_TOP_LEFT + 10;
     
@@ -100,26 +101,9 @@ begin
         end if; 
     end process vcount_proc;  
     --generate hsync
-    square_color_proc: process(hcount, vcount)
-    begin
-        X_COORD <= (hcount - H_INNER_TOP_LEFT) / 50;
-        Y_COORD <= (vcount - V_INNER_TOP_LEFT) / 50;
-        
-        if (square_colors(Y_COORD, X_COORD) = '1') then
-            SQUARE_COLOR <= 1;
-        else
-            SQUARE_COLOR <= 0;
-        end if;
-        if legal_moves(Y_COORD, X_COORD) = '1' then
-            SQUARE_COLOR <= 4;
-        end if;
-        if (X_COORD = CHOSEN_X and Y_COORD = CHOSEN_Y) then
-            SQUARE_COLOR <= 3;
-        end if;
-        if (X_COORD = MOVE_X and Y_COORD = MOVE_Y) then
-            SQUARE_COLOR <= 2;
-        end if;
-    end process square_color_proc;
+--    square_color_proc: process(hcount, vcount)
+--    begin
+--    end process square_color_proc;
     hsync_gen_proc: process(hcount)
     begin 
         if(hcount < H_SYNC) then 
@@ -136,8 +120,36 @@ begin
             vsync <= '1'; 
         end if;
     end process vsync_gen_proc;
+    square_color_process: process
+    begin
+        X_COORD <= (hcount - H_INNER_TOP_LEFT) / 50;
+        Y_COORD <= (vcount - V_INNER_TOP_LEFT) / 50;
+        
+        if (square_colors(Y_COORD, X_COORD) = '1') then
+            SQUARE_COLOR <= 1;
+        end if;
+        if (square_colors(Y_COORD, X_COORD) = '0') then
+            SQUARE_COLOR <= 0;
+        end if;
+        if legal_moves(Y_COORD, X_COORD) = '1' then
+            SQUARE_COLOR <= 4;
+        end if;
+        if (X_COORD = CHOSEN_X and Y_COORD = CHOSEN_Y) then
+            SQUARE_COLOR <= 3;
+        end if;
+        if (X_COORD = MOVE_X and Y_COORD = MOVE_Y) then
+            SQUARE_COLOR <= 2;
+        end if;
+    end process square_color_process;
     -- generate RGB signals for 1024x600 display area 
-    data_output_proc: process(hcount, vcount) begin 
+    data_output_proc: process(hcount, vcount) 
+    variable piece_h : integer := 0; 
+    variable piece_v : integer := 0;
+    variable king_h : integer := 0; 
+    variable king_v : integer := 0;
+    variable round_distance : integer := 0;
+    begin 
+        
         if( (hcount >= H_START and hcount < H_END) and 
             (vcount >= V_START and vcount< V_END) ) then
                 --Display Area (draw the square here) 
@@ -151,36 +163,68 @@ begin
                         green <= "1111";
                         blue <= "1111";
                     else
-                        if ((hcount >= H_PIECE_TOP_LEFT + X_COORD * 50 and hcount < H_PIECE_TOP_LEFT + X_COORD * 50 + PIECE_LENGTH) and 
-                    (vcount >= Y_COORD * 50 + V_PIECE_TOP_LEFT and vcount < V_PIECE_TOP_LEFT + Y_COORD * 50 + PIECE_LENGTH)) then 
+                        piece_h := hcount - (H_INNER_TOP_LEFT + X_COORD * 50 + 25);
+                        piece_v := vcount - (V_INNER_TOP_LEFT + Y_COORD * 50 + 25);
+                        round_distance := piece_h * piece_h + piece_v * piece_v;
+--                        if ((hcount >= H_PIECE_TOP_LEFT + X_COORD * 50 and hcount < H_PIECE_TOP_LEFT + X_COORD * 50 + PIECE_LENGTH) and 
+--                    (vcount >= Y_COORD * 50 + V_PIECE_TOP_LEFT and vcount < V_PIECE_TOP_LEFT + Y_COORD * 50 + PIECE_LENGTH)) then 
+                        if (round_distance <= PIECE_RADIUS) then 
+                            
                             if (white_pieces(Y_COORD, X_COORD) >= 1) then
                                 red <= "1111";
                                 green <= "1111";
                                 blue <= "1111";
+                                if ((white_pieces(Y_COORD, X_COORD) = 2) and ((hcount >= H_INNER_TOP_LEFT + X_COORD * 50 + 18) and (hcount < H_INNER_TOP_LEFT + X_COORD * 50 + 33)) and 
+                            ((vcount >= Y_COORD * 50 + V_INNER_TOP_LEFT + 18) and (vcount < V_INNER_TOP_LEFT + Y_COORD * 50 + 33))) then 
+                                    king_h := (hcount - H_INNER_TOP_LEFT - X_COORD * 50 - 18) / 3;
+                                    king_v := (vcount - V_INNER_TOP_LEFT - Y_COORD * 50 - 18) / 3;
+                                    
+                                    if ((king_h + king_v) = 4) or (king_h = king_v) then
+                                        red <= "0000";
+                                        green <= "0000";
+                                        blue <= "0000";
+                                    end if;
+                                end if;
                             elsif (black_pieces(Y_COORD, X_COORD) >= 1) then
                                 red <= "0000";
                                 green <= "0000";
                                 blue <= "0000";
+                                if ((black_pieces(Y_COORD, X_COORD) = 2) and ((hcount >= H_INNER_TOP_LEFT + X_COORD * 50 + 18) and (hcount < H_INNER_TOP_LEFT + X_COORD * 50 + 33)) and 
+                            ((vcount >= Y_COORD * 50 + V_INNER_TOP_LEFT + 18) and (vcount < V_INNER_TOP_LEFT + Y_COORD * 50 + 33))) then 
+                                    king_h := (hcount - H_INNER_TOP_LEFT - X_COORD * 50 - 18) / 3;
+                                    king_v := (vcount - V_INNER_TOP_LEFT - Y_COORD * 50 - 18) / 3;
+                                    
+                                    if ((king_h + king_v) = 4) or (king_h = king_v) then
+                                        red <= "1111";
+                                        green <= "1111";
+                                        blue <= "1111";
+                                    end if;
+                                end if;
                             else
                                 if (SQUARE_COLOR = 1) then
                                      -- brown squares
                                     red <= "0100"; 
                                     green <= "0001"; 
                                     blue <= "0000";
-                                elsif (SQUARE_COLOR = 2) then
+                                end if;
+                                if (SQUARE_COLOR = 2) then
                                     -- green select square
                                     red <= "0000"; 
                                     green <= "1011"; 
                                     blue <= "0000";
-                                elsif SQUARE_COLOR = 3 then
+                                end if;
+                                
+                                if (SQUARE_COLOR = 3) then
                                     red <= "0000"; 
                                     green <= "0000"; 
                                     blue <= "1100";
-                                elsif SQUARE_COLOR = 4 then
+                                end if;
+                                if (SQUARE_COLOR = 4) then
                                     red <= "1101"; 
                                     green <= "0000"; 
                                     blue <= "0000"; 
-                                else
+                                end if;
+                                if (SQUARE_COLOR = 0) then
                                     -- yellow squares
                                     red <= "1100"; 
                                     green <= "1011"; 
@@ -189,29 +233,34 @@ begin
                             end if;
                         else
                             if (SQUARE_COLOR = 1) then
-                                -- brown squares
-                                    red <= "0100"; 
-                                    green <= "0001"; 
-                                    blue <= "0000";
-                            elsif (SQUARE_COLOR = 2) then
+                                 -- brown squares
+                                red <= "0100"; 
+                                green <= "0001"; 
+                                blue <= "0000";
+                            end if;
+                            if (SQUARE_COLOR = 2) then
                                 -- green select square
                                 red <= "0000"; 
                                 green <= "1011"; 
                                 blue <= "0000";
-                            elsif SQUARE_COLOR = 3 then
+                            end if;
+                            
+                            if (SQUARE_COLOR = 3) then
                                 red <= "0000"; 
                                 green <= "0000"; 
                                 blue <= "1100";
-                            elsif SQUARE_COLOR = 4 then
+                            end if;
+                            if (SQUARE_COLOR = 4) then
                                 red <= "1101"; 
                                 green <= "0000"; 
                                 blue <= "0000"; 
-                            else
-                                -- yellow squares
-                                    red <= "1100"; 
-                                    green <= "1011"; 
-                                    blue <= "0010";
                             end if;
+                            if (SQUARE_COLOR = 0) then
+                                -- yellow squares
+                                red <= "1100"; 
+                                green <= "1011"; 
+                                blue <= "0010";
+                            end if; 
                         end if;                      
                     end if;
                 else 

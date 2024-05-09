@@ -121,10 +121,6 @@ architecture Behavioral of project is
    (0, 1, 0, 1, 0, 1, 0, 1),
    (1, 0, 1, 0, 1, 0, 1, 0)
    );
---   ("01010101", "10101010", "01010101", "00000000",
---           "00000000","00000000","00000000","00000000");
---   signal white_pieces : pieces := ("00000000", "00000000", "00000000", "00000000",
---    "00000000","10101010","01010101","10101010");
     
    signal legal_moves : board := ("00000000", "00000000", "00000000", "00000000",
     "00000000", "00000000", "00000000", "00000000");
@@ -221,7 +217,7 @@ begin
                         -- top-left capture
                         legal_moves(Y_COORD-2,X_COORD-2) <= '1';
                     end if;
-                    Q <= "11000000";
+                    Q <= "00000010";
                     SELECTED_PIECE <= true;
                 end if;
                 -- Identify legal moves for non-king
@@ -242,7 +238,7 @@ begin
                         -- down-right capture
                         legal_moves(Y_COORD+2,X_COORD+2) <= '1';
                     end if;
-                    Q <= "00110000";
+                    Q <= "00000010";
                     SELECTED_PIECE <= true;
                 end if;
             end if;
@@ -254,7 +250,7 @@ begin
                         legal_moves <= ("00000000", "00000000", "00000000", "00000000",
     "00000000", "00000000", "00000000", "00000000");
                         SELECTED_PIECE <= false;
-                        Q <= "00001100";
+                        Q <= "00000001";
                         TURN <= '1';
                         -- dirty and repetitive, but works for now
                         CHOSEN_Y <= -1;
@@ -265,7 +261,7 @@ begin
                         legal_moves <= ("00000000", "00000000", "00000000", "00000000",
     "00000000", "00000000", "00000000", "00000000");
                         SELECTED_PIECE <= false;
-                        Q <= "00001100";
+                        Q <= "00000001";
                         TURN <= '1';
                         -- dirty and repetitive, but works for now
                         CHOSEN_Y <= -1;
@@ -277,7 +273,7 @@ begin
                         legal_moves <= ("00000000", "00000000", "00000000", "00000000",
     "00000000", "00000000", "00000000", "00000000");
                         SELECTED_PIECE <= false;
-                        Q <= "00001100";
+                        Q <= "00000001";
                         TURN <= '0';
                         -- dirty and repetitive, but works for now
                         CHOSEN_Y <= -1;
@@ -289,7 +285,7 @@ begin
                         legal_moves <= ("00000000", "00000000", "00000000", "00000000",
     "00000000", "00000000", "00000000", "00000000");
                         SELECTED_PIECE <= false;
-                        Q <= "00001100";
+                        Q <= "00000001";
                         TURN <= '0';
                         -- dirty and repetitive, but works for now
                         CHOSEN_Y <= -1;
@@ -303,7 +299,7 @@ begin
                         legal_moves <= ("00000000", "00000000", "00000000", "00000000",
     "00000000", "00000000", "00000000", "00000000");
                         SELECTED_PIECE <= false;
-                        Q <= "00001100";
+                        Q <= "00000001";
                         TURN <= '0';
                         -- dirty and repetitive, but works for now
                         CHOSEN_Y <= -1;
@@ -314,7 +310,7 @@ begin
                         legal_moves <= ("00000000", "00000000", "00000000", "00000000",
     "00000000", "00000000", "00000000", "00000000");
                         SELECTED_PIECE <= false;
-                        Q <= "00001100";
+                        Q <= "00000001";
                         TURN <= '0';
                         -- dirty and repetitive, but works for now
                         CHOSEN_Y <= -1;
@@ -326,7 +322,7 @@ begin
                         legal_moves <= ("00000000", "00000000", "00000000", "00000000",
     "00000000", "00000000", "00000000", "00000000");
                         SELECTED_PIECE <= false;
-                        Q <= "00001100";
+                        Q <= "00000001";
                         TURN <= '1';
                         -- dirty and repetitive, but works for now
                         CHOSEN_Y <= -1;
@@ -338,7 +334,7 @@ begin
                         legal_moves <= ("00000000", "00000000", "00000000", "00000000",
     "00000000", "00000000", "00000000", "00000000");
                         SELECTED_PIECE <= false;
-                        Q <= "00001100";
+                        Q <= "00000001";
                         TURN <= '1';
                         -- dirty and repetitive, but works for now
                         CHOSEN_Y <= -1;

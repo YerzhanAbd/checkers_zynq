@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date         : Thu May  9 10:33:50 2024
+| Date         : Thu May  9 12:14:46 2024
 | Host         : LAPTOP-7GF0693T running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file project_control_sets_placed.rpt
 | Design       : project
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    23 |
-|    Minimum number of control sets                        |    23 |
+| Total control sets                                       |    21 |
+|    Minimum number of control sets                        |    21 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    52 |
+| Unused register locations in slices containing registers |    32 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    23 |
-| >= 0 to < 4        |     4 |
+| Total control sets |    21 |
+| >= 0 to < 4        |     3 |
 | >= 4 to < 6        |     1 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     4 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |    14 |
+| >= 16              |    13 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,12 +58,12 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |             154 |           99 |
+| No           | No                    | No                     |             157 |           92 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |             192 |           97 |
-| Yes          | No                    | No                     |             142 |           40 |
+| No           | Yes                   | No                     |             128 |           36 |
+| Yes          | No                    | No                     |             138 |           48 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             132 |           49 |
+| Yes          | Yes                   | No                     |             129 |           63 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -73,29 +73,27 @@ Table of Contents
 +------------------------------------+--------------------------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
 |            Clock Signal            |                      Enable Signal                     |                 Set/Reset Signal                | Slice Load Count | Bel Load Count | Bels / Slice |
 +------------------------------------+--------------------------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
+|  comp_ssd_ctrl/comp_clk100Hz/pulse |                                                        |                                                 |                1 |              1 |         1.00 |
 |  clk_IBUF_BUFG                     | joystick_test/spi_master_0/FSM_sequential_state_reg[2] |                                                 |                1 |              1 |         1.00 |
 |  clk50MHz_BUFG                     | vga_display/vcount                                     |                                                 |                1 |              1 |         1.00 |
-|  comp_ssd_ctrl/comp_clk100Hz/pulse |                                                        |                                                 |                1 |              1 |         1.00 |
-|  clk10Hz_BUFG                      | Q1_out                                                 | Q0_out                                          |                1 |              2 |         2.00 |
 |  clk_IBUF_BUFG                     | joystick_test/spi_master_0/clk_toggles[4]_i_1_n_0      | joystick_test/spi_master_0/count[31]_i_1__2_n_0 |                2 |              5 |         2.50 |
 |  clk_IBUF_BUFG                     | joystick_test/spi_master_0/rx_buffer[7]_i_1_n_0        |                                                 |                3 |              8 |         2.67 |
-|  clk_IBUF_BUFG                     | joystick_test/spi_master_0/rx_data[7]_i_1_n_0          |                                                 |                2 |              8 |         4.00 |
-|  clk_IBUF_BUFG                     | joystick_test/spi_master_0/E[1]                        |                                                 |                1 |              8 |         8.00 |
-|  clk_IBUF_BUFG                     | joystick_test/spi_master_0/E[0]                        |                                                 |                1 |              8 |         8.00 |
-|  clk_IBUF_BUFG                     | joystick_test/x_position[7]_i_1_n_0                    |                                                 |                5 |             16 |         3.20 |
+|  clk_IBUF_BUFG                     | joystick_test/spi_master_0/rx_data[7]_i_1_n_0          |                                                 |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG                     | joystick_test/spi_master_0/E[1]                        |                                                 |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                     | joystick_test/spi_master_0/E[0]                        |                                                 |                2 |              8 |         4.00 |
+|  clk_IBUF_BUFG                     | joystick_test/x_position[7]_i_1_n_0                    |                                                 |                6 |             16 |         2.67 |
 |  clk_IBUF_BUFG                     |                                                        |                                                 |               12 |             24 |         2.00 |
-|  clk_IBUF_BUFG                     | joystick_test/spi_master_0/busy_reg_1                  |                                                 |                9 |             24 |         2.67 |
+|  clk_IBUF_BUFG                     | joystick_test/spi_master_0/busy_reg_1                  |                                                 |               12 |             24 |         2.00 |
 |  clk_IBUF_BUFG                     | joystick_test/spi_master_0/count[31]_i_2_n_0           | joystick_test/spi_master_0/count[31]_i_1__2_n_0 |                6 |             29 |         4.83 |
 |  clk50MHz_BUFG                     | vga_display/vcount                                     | vga_display/vcount[31]_i_1_n_0                  |                8 |             31 |         3.88 |
+|  clk10Hz_BUFG                      | joystick_test/sel__0                                   |                                                 |                8 |             32 |         4.00 |
 |  clk10Hz_BUFG                      | joystick_test/x_position_reg[6]_0                      |                                                 |                8 |             32 |         4.00 |
 |  clk_IBUF_BUFG                     |                                                        | comp_ssd_ctrl/comp_clk100Hz/p_0_in              |                9 |             32 |         3.56 |
 |  clk_IBUF_BUFG                     |                                                        | comp_clk50MHz/pulse                             |                9 |             32 |         3.56 |
 |  clk_IBUF_BUFG                     |                                                        | comp_clk10Hz/count[31]_i_1__0_n_0               |                9 |             32 |         3.56 |
 |  clk50MHz_BUFG                     |                                                        | vga_display/hcount[31]_i_1_n_0                  |                9 |             32 |         3.56 |
-|  clk10Hz_BUFG                      | joystick_test/sel__0                                   |                                                 |                9 |             36 |         4.00 |
-|  clk10Hz_BUFG                      |                                                        | legal_moves[0,0]531_out                         |               61 |             64 |         1.05 |
-|  clk10Hz_BUFG                      | CHOSEN_Y[31]_i_2_n_0                                   | legal_moves[0,0]531_out                         |               32 |             65 |         2.03 |
-|  clk10Hz_BUFG                      |                                                        |                                                 |               86 |            129 |         1.50 |
+|  clk10Hz_BUFG                      | CHOSEN_X                                               | CHOSEN_X[31]_i_1_n_0                            |               47 |             64 |         1.36 |
+|  clk10Hz_BUFG                      |                                                        |                                                 |               79 |            132 |         1.67 |
 +------------------------------------+--------------------------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
 
 

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
-| Date             : Thu May  9 10:34:21 2024
+| Date             : Thu May  9 12:15:14 2024
 | Host             : LAPTOP-7GF0693T running 64-bit major release  (build 9200)
 | Command          : report_power -file project_power_routed.rpt -pb project_power_summary_routed.pb -rpx project_power_routed.rpx
 | Design           : project
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.002 |        3 |       --- |             --- |
-| Slice Logic    |     0.005 |     5884 |       --- |             --- |
-|   LUT as Logic |     0.004 |     3794 |     53200 |            7.13 |
-|   CARRY4       |    <0.001 |      605 |     13300 |            4.55 |
-|   Register     |    <0.001 |      620 |    106400 |            0.58 |
-|   F7/F8 Muxes  |     0.000 |       82 |     53200 |            0.15 |
+| Slice Logic    |     0.005 |     5617 |       --- |             --- |
+|   LUT as Logic |     0.004 |     3765 |     53200 |            7.08 |
+|   CARRY4       |    <0.001 |      549 |     13300 |            4.13 |
+|   Register     |    <0.001 |      552 |    106400 |            0.52 |
+|   F7/F8 Muxes  |    <0.001 |       71 |     53200 |            0.13 |
 |   Others       |     0.000 |       16 |       --- |             --- |
 |   BUFG         |     0.000 |        2 |        32 |            6.25 |
-| Signals        |     0.004 |     4621 |       --- |             --- |
+| Signals        |     0.005 |     4391 |       --- |             --- |
 | I/O            |     0.006 |       37 |       200 |           18.50 |
 | Static Power   |     0.106 |          |           |                 |
 | Total          |     0.124 |          |           |                 |
@@ -73,7 +73,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.019 |       0.011 |      0.007 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.019 |       0.012 |      0.007 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.011 |       0.000 |      0.010 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -146,13 +146,12 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+------------------+-----------+
-| Name             | Power (W) |
-+------------------+-----------+
-| project          |     0.018 |
-|   joystick_test  |     0.002 |
-|     spi_master_0 |     0.001 |
-|   vga_display    |     0.008 |
-+------------------+-----------+
++-----------------+-----------+
+| Name            | Power (W) |
++-----------------+-----------+
+| project         |     0.018 |
+|   joystick_test |     0.002 |
+|   vga_display   |     0.008 |
++-----------------+-----------+
 
 

@@ -130,6 +130,7 @@ begin
     main_menu_color: process(hcount, vcount)
     variable X: integer := 0;
     begin
+        -- Main menu choose mode
         if (STATE = 4) then
             X := (hcount - H_TOP_LEFT) / 300;
             
@@ -184,6 +185,7 @@ begin
                         piece_h := hcount - (H_INNER_TOP_LEFT + X_COORD * 60 + 30);
                         piece_v := vcount - (V_INNER_TOP_LEFT + Y_COORD * 60 + 30);
                         round_distance := piece_h * piece_h + piece_v * piece_v;
+                        -- Fund round shape based on formula a^2 + b^2 <= Radius^2
                         if (round_distance <= PIECE_RADIUS) then 
                             
                             if (white_pieces(Y_COORD, X_COORD) >= 1) then
@@ -191,6 +193,7 @@ begin
                                 green <= "1111";
                                 blue <= "1111";
                                 if ((white_pieces(Y_COORD, X_COORD) = 2) and ((hcount >= H_INNER_TOP_LEFT + X_COORD * 60 + 23) and (hcount < H_INNER_TOP_LEFT + X_COORD * 60 + 38)) and ((vcount >= Y_COORD * 60 + V_INNER_TOP_LEFT + 23) and (vcount < V_INNER_TOP_LEFT + Y_COORD * 60 + 38))) then 
+                                    -- If the piece is king, then print X on top of it
                                     king_h := (hcount - H_INNER_TOP_LEFT - X_COORD * 60 - 23) / 3;
                                     king_v := (vcount - V_INNER_TOP_LEFT - Y_COORD * 60 - 23) / 3;
                                     
@@ -206,6 +209,7 @@ begin
                                 green <= "0000";
                                 blue <= "0000";
                                 if ((black_pieces(Y_COORD, X_COORD) = 2) and ((hcount >= H_INNER_TOP_LEFT + X_COORD * 60 + 23) and (hcount < H_INNER_TOP_LEFT + X_COORD * 60 + 38)) and ((vcount >= Y_COORD * 60 + V_INNER_TOP_LEFT + 23) and (vcount < V_INNER_TOP_LEFT + Y_COORD * 60 + 38))) then 
+                                    -- If the piece is king, then print X on top of it
                                     king_h := (hcount - H_INNER_TOP_LEFT - X_COORD * 60 - 23) / 3;
                                     king_v := (vcount - V_INNER_TOP_LEFT - Y_COORD * 60 - 23) / 3;
                                     
@@ -279,6 +283,7 @@ begin
                     blue <= "0000";           
                     if ((hcount >= H_TOP_LEFT) and (hcount < H_TOP_LEFT + 600) and (vcount >= V_TOP_LEFT + 180) and (vcount < V_TOP_LEFT + 180 + 70)) then
                         if (WINNER = 0) then
+                            -- print if white is winner
                             if (WHITE_WON((vcount - V_TOP_LEFT - 180)/10, (hcount - H_TOP_LEFT)/10) = '1') then
                                 red <= "1111"; 
                                 green <= "1111"; 
@@ -289,6 +294,7 @@ begin
                                 blue <= "0000"; 
                             end if;
                         elsif (WINNER = 1) then
+                            -- print if black is winner
                             if (BLACK_WON((vcount - V_TOP_LEFT - 180)/10, (hcount - H_TOP_LEFT)/10) = '1') then
                                 red <= "1111"; 
                                 green <= "1111"; 
@@ -299,6 +305,7 @@ begin
                                 blue <= "0000"; 
                             end if;
                         else
+                            -- print if no winner is known yet
                             if (NEW_GAME((vcount - V_TOP_LEFT - 180)/10, (hcount - H_TOP_LEFT)/10) = '1') then
                                 red <= "1111"; 
                                 green <= "1111"; 
@@ -317,6 +324,7 @@ begin
                                 green <= "1111"; 
                                 blue <= "1111"; 
                             else
+                                -- Inverse font color if player hovers
                                 red <= "0000"; 
                                 green <= "0000"; 
                                 blue <= "0000";
@@ -327,6 +335,7 @@ begin
                                 green <= "0000"; 
                                 blue <= "0000"; 
                             else
+                                -- Green if the player hovers over the button
                                 red <= "0000"; 
                                 green <= "1111"; 
                                 blue <= "0000"; 
@@ -340,6 +349,7 @@ begin
                                 green <= "1111"; 
                                 blue <= "1111"; 
                             else
+                                -- Inverse font color if player hovers
                                 red <= "0000"; 
                                 green <= "0000"; 
                                 blue <= "0000";
@@ -350,6 +360,7 @@ begin
                                 green <= "0000"; 
                                 blue <= "0000"; 
                             else
+                                -- Green if the player hovers over the button
                                 red <= "0000"; 
                                 green <= "1111"; 
                                 blue <= "0000"; 

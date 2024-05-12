@@ -86,6 +86,7 @@ architecture Behavioral of project is
     signal Y_COORD: integer := 0;
     signal X_COORD_VEC: std_logic_vector(3 downto 0);
     signal Y_COORD_VEC: std_logic_vector(3 downto 0);
+    -- for LED output
     signal COORD_VEC: std_logic_vector(7 downto 0);
     
     
@@ -98,6 +99,7 @@ architecture Behavioral of project is
     
     signal MOVE_X : integer := 0; 
     signal MOVE_Y : integer := 0;
+    -- Select Ai or PvP mode
     signal SELECT_MODE : integer := 0; 
     signal winner : integer := -1; 
     signal BOARD_SIZE: integer := 7;
@@ -140,16 +142,19 @@ begin
     -- State 1 -> move around the board and choose the piece
     -- State 2 -> The piece is chosen, make a move, OR move around the board and choose another piece
     -- State 3 -> Multiple captures. Capture multiple pieces. ONLY capturing moves accepted.
-    --            If there are no pieces to capture, the turn is passed to another player
+    --            If there are no pieces to capture, the turn is passed to another player. These captures are mandatory
     -- State 4 -> Start new game. Wait for user input to choose Ai vs PvP
     -- State 5 -> Re-initializing board
     get_coords: process(clk10Hz)
     begin
+        -- OUtput FSM to LEDs
         Q <= std_logic_vector(TO_UNSIGNED(STATE, 8));
         if (STATE /= 4) then
+            -- print number of pieces for debugging
             X_COORD_VEC <= std_logic_vector(TO_UNSIGNED(whites, 4));
             Y_COORD_VEC <= std_logic_vector(TO_UNSIGNED(blacks, 4));
         elsif (STATE = 4) then
+            -- Print select of the main menu mode for debugging
             X_COORD_VEC <= std_logic_vector(TO_UNSIGNED(SELECT_MODE, 4));
             Y_COORD_VEC <= "0000";
         end if;
@@ -195,6 +200,7 @@ begin
     --move right
     choose_mode: process(clk10Hz)
     begin
+        -- Choose main menu AI or PvP
         if( rising_edge(clk10Hz) and STATE = 4) then
             if (x_position > UPPER_LIMIT and SELECT_MODE < 1) then
                 SELECT_MODE <= SELECT_MODE + 1;
@@ -207,24 +213,21 @@ begin
     end process choose_mode;
     pointer: process(clk10Hz)
     begin
+        -- Navigate the board during the game
         if( rising_edge(clk10Hz) and STATE /= 4) then
             if (x_position > UPPER_LIMIT and MOVE_X < BOARD_SIZE) then
---                H_TOP_LEFT <= H_TOP_LEFT + 10;
                 MOVE_X <= MOVE_X + 1;
             end if;
                          
             if (x_position < LOWER_LIMIT and MOVE_X > 0) then
---                H_TOP_LEFT <= H_TOP_LEFT - 10;
                 MOVE_X <= MOVE_X - 1;
             end if;
             
             if (y_position < LOWER_LIMIT and MOVE_Y > 0) then
---                V_TOP_LEFT <= V_TOP_LEFT - 10;
                 MOVE_Y <= MOVE_Y - 1;
             end if; 
                         
             if (y_position > UPPER_LIMIT and MOVE_Y < BOARD_SIZE) then
---                V_TOP_LEFT <= V_TOP_LEFT + 10;
                 MOVE_Y <= MOVE_Y + 1;
             end if;
             X_COORD <= MOVE_X;
@@ -261,6 +264,7 @@ begin
                         number_of_legal_moves <= number_of_legal_moves + 1;
                     end if;
                     
+                    -- Find moves for white king
                     if (white_pieces(CHOSEN_Y, CHOSEN_X) = 2) then
                         if (STATE /= 3) and (CHOSEN_Y+1 <= BOARD_SIZE) and (CHOSEN_X-1 >= 0) and white_pieces(CHOSEN_Y+1, CHOSEN_X-1) = 0 and black_pieces(CHOSEN_Y+1, CHOSEN_X-1) = 0 then
                             -- down-left
@@ -303,6 +307,7 @@ begin
                         number_of_legal_moves <= number_of_legal_moves + 1;
                     end if;
                     
+                    -- Find moves for black king
                     if (black_pieces(CHOSEN_Y, CHOSEN_X) = 2) then
                         if (STATE /= 3) and (CHOSEN_Y-1 >= 0) and (CHOSEN_X+1 <= BOARD_SIZE) and black_pieces(CHOSEN_Y-1, CHOSEN_X+1) = 0 and white_pieces(CHOSEN_Y-1, CHOSEN_X+1) = 0 then
                             -- top-right
@@ -333,6 +338,7 @@ begin
         if rising_edge(clk10Hz) then
             
             if ((STATE = 1 or STATE = 2) and trigger_button = '1') and (STATE /= 3) then
+                -- Choose piece durint State 1 or State 2
                 if (white_pieces(Y_COORD, X_COORD) >= 1 and TURN = '0') then
                     CHOSEN_Y <= Y_COORD;
                     CHOSEN_X <= X_COORD;
@@ -350,9 +356,10 @@ begin
             end if;
             
             if (STATE = 4) then
+                -- Choose mode AI or PvP
                 -- For now it is hardocded for PvP
                 if (trigger_button = '1') then
-                    -- Start the game over for PvP
+                    -- Start the new game for PvP
                     STATE <= 1;
                     CHOSEN_X <= -2;
                     CHOSEN_Y <= -2;
@@ -387,6 +394,7 @@ begin
             end if;
             
             if (STATE = 3) and (number_of_legal_moves = 0) then
+                -- If no possible captures, fininsh State 3 and change turns
                 CHOSEN_X <= -2;
                 CHOSEN_Y <= -2;
                 STATE <= 1;

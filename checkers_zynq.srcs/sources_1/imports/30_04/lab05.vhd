@@ -11,10 +11,6 @@ entity project is
         clk: in std_logic;        
         hsync, vsync: out std_logic;        
         red, green, blue : out std_logic_vector(3 downto 0);
---        BTNR : IN STD_LOGIC;
---        BTNU : IN STD_LOGIC;
---        BTND : IN STD_LOGIC;
---        BTNL : IN STD_LOGIC;
         sel: buffer std_logic := '0';
         ssd: out std_logic_vector ( 6 downto 0 ); 
         miso            : IN     STD_LOGIC;
@@ -128,28 +124,30 @@ architecture Behavioral of project is
 --   (2, 0, 2, 0, 2, 0, 2, 0)
 --   );
 
-    signal black_pieces : pieces := (
-   (0, 1, 0, 0, 0, 0, 0, 1),
-   (1, 0, 1, 0, 1, 0, 1, 0),
-   (0, 2, 0, 2, 0, 2, 0, 2),
-   (0, 0, 0, 0, 0, 0, 0, 0),
-   (0, 0, 0, 0, 0, 0, 0, 0),
-   (0, 0, 0, 0, 0, 0, 0, 0),
-   (0, 0, 0, 1, 0, 0, 0, 0),
-   (0, 0, 0, 0, 0, 0, 0, 0)
-   );
+    
    signal blacks: integer := 2;
    signal whites: integer := 2;
    
+   signal black_pieces: pieces  := (
+   (0, 1, 0, 1, 0, 1, 0, 1),
+   (1, 0, 1, 0, 1, 0, 1, 0),
+   (0, 1, 0, 1, 0, 1, 0, 1),
+   (0, 0, 0, 0, 0, 0, 0, 0),
+   (0, 0, 0, 0, 0, 0, 0, 0),
+   (0, 0, 0, 0, 0, 0, 0, 0),
+   (0, 0, 0, 0, 0, 0, 0, 0),
+   (0, 0, 0, 0, 0, 0, 0, 0)
+   );
+   
    signal white_pieces : pieces := (
    (0, 0, 0, 0, 0, 0, 0, 0),
-   (0, 0, 0, 0, 1, 0, 0, 0),
    (0, 0, 0, 0, 0, 0, 0, 0),
    (0, 0, 0, 0, 0, 0, 0, 0),
    (0, 0, 0, 0, 0, 0, 0, 0),
-   (2, 0, 2, 0, 2, 0, 2, 0),
-   (0, 2, 0, 0, 0, 2, 0, 2),
-   (2, 0, 0, 0, 0, 0, 2, 0)
+   (0, 0, 0, 0, 0, 0, 0, 0),
+   (1, 0, 1, 0, 1, 0, 1, 0),
+   (0, 1, 0, 1, 0, 1, 0, 1),
+   (1, 0, 1, 0, 1, 0, 1, 0)
    );
     
    signal legal_moves : board := ("00000000", "00000000", "00000000", "00000000",

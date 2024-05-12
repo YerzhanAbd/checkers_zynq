@@ -374,6 +374,43 @@ begin
                 end if;
             end if;
             
+            if (STATE = 4) then
+                -- For now it is hardocded for PvP
+                if (trigger_button = '1') then
+                    -- Start the game over for PvP
+                    STATE <= 1;
+                    CHOSEN_X <= -2;
+                    CHOSEN_Y <= -2;
+                    STATE <= 1;
+                    TURN <= '0';
+                    SELECTED_PIECE <= false;
+                    black_pieces <= (
+                   (0, 1, 0, 1, 0, 1, 0, 1),
+                   (1, 0, 1, 0, 1, 0, 1, 0),
+                   (0, 1, 0, 1, 0, 1, 0, 1),
+                   (0, 0, 0, 0, 0, 0, 0, 0),
+                   (0, 0, 0, 0, 0, 0, 0, 0),
+                   (0, 0, 0, 0, 0, 0, 0, 0),
+                   (0, 0, 0, 0, 0, 0, 0, 0),
+                   (0, 0, 0, 0, 0, 0, 0, 0)
+                   );
+                   blacks <= 12;
+                   whites <= 12;
+                   
+                   white_pieces <= (
+                   (0, 0, 0, 0, 0, 0, 0, 0),
+                   (0, 0, 0, 0, 0, 0, 0, 0),
+                   (0, 0, 0, 0, 0, 0, 0, 0),
+                   (0, 0, 0, 0, 0, 0, 0, 0),
+                   (0, 0, 0, 0, 0, 0, 0, 0),
+                   (1, 0, 1, 0, 1, 0, 1, 0),
+                   (0, 1, 0, 1, 0, 1, 0, 1),
+                   (1, 0, 1, 0, 1, 0, 1, 0)
+                   );
+                end if;
+                
+            end if;
+            
             if (STATE = 3) and (number_of_legal_moves = 0) then
                 CHOSEN_X <= -2;
                 CHOSEN_Y <= -2;

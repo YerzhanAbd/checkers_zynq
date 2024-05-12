@@ -174,7 +174,6 @@ begin
             if ((hcount >= H_TOP_LEFT and hcount < H_TOP_LEFT + LENGTH) and 
                 (vcount >= V_TOP_LEFT and vcount < V_TOP_LEFT + LENGTH)) then 
                 -- inside the board
-                
                 if (STATE /= 4) then
                     if (hcount < H_INNER_TOP_LEFT or hcount >= H_INNER_BOT_RIGHT or vcount < V_INNER_TOP_LEFT or vcount >= V_INNER_BOT_RIGHT) then
                         -- white borders

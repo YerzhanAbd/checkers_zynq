@@ -1,0 +1,234 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Sun May 12 22:42:58 2024
+| Host         : LAPTOP-7GF0693T running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file project_control_sets_placed.rpt
+| Design       : project
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   156 |
+|    Minimum number of control sets                        |   156 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   108 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   156 |
+| >= 0 to < 4        |     4 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     5 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |   145 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              71 |           49 |
+| No           | No                    | Yes                    |               0 |            0 |
+| No           | Yes                   | No                     |             137 |           41 |
+| Yes          | No                    | No                     |            1772 |         1231 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |            2824 |         1734 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------------------------+----------------------------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
+|            Clock Signal            |                       Enable Signal                      |                 Set/Reset Signal                | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------------------------+----------------------------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
+|  comp_ssd_ctrl/comp_clk100Hz/pulse |                                                          |                                                 |                1 |              1 |         1.00 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_15                                |                                                 |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                     | joystick_test/spi_master_0/FSM_sequential_state_reg[2]   |                                                 |                1 |              1 |         1.00 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_127                               |                                                 |                1 |              1 |         1.00 |
+|  clk10Hz_BUFG                      | joystick_test/E[0]                                       |                                                 |                5 |              5 |         1.00 |
+|  clk_IBUF_BUFG                     | joystick_test/spi_master_0/clk_toggles[4]_i_1_n_0        | joystick_test/spi_master_0/count[31]_i_1__2_n_0 |                1 |              5 |         5.00 |
+|  clk_IBUF_BUFG                     | joystick_test/spi_master_0/FSM_sequential_state_reg[2]_1 |                                                 |                4 |              8 |         2.00 |
+|  clk_IBUF_BUFG                     | joystick_test/spi_master_0/rx_buffer[7]_i_1_n_0          |                                                 |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                     | joystick_test/spi_master_0/byte_reg[2]                   |                                                 |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG                     | joystick_test/spi_master_0/rx_data[7]_i_1_n_0            |                                                 |                1 |              8 |         8.00 |
+|                                    |                                                          | vga_display/red_reg[3]_i_2_n_0                  |                6 |              9 |         1.50 |
+|  clk_IBUF_BUFG                     | joystick_test/x_position[7]_i_1_n_0                      |                                                 |                5 |             17 |         3.40 |
+|  clk_IBUF_BUFG                     |                                                          |                                                 |               12 |             24 |         2.00 |
+|  clk_IBUF_BUFG                     | joystick_test/spi_master_0/state_reg_1                   |                                                 |                9 |             24 |         2.67 |
+|  clk10Hz_BUFG                      | joystick_test/E[0]                                       | joystick_test/TURN_reg_11                       |               11 |             27 |         2.45 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_13                      | joystick_test/TURN_reg_134                      |                8 |             29 |         3.62 |
+|  clk_IBUF_BUFG                     | joystick_test/spi_master_0/count[31]_i_2__1_n_0          | joystick_test/spi_master_0/count[31]_i_1__2_n_0 |                5 |             29 |         5.80 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_14                                |                                                 |               14 |             29 |         2.07 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_127                               | joystick_test/TURN_reg_133                      |                8 |             29 |         3.62 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_10                                | joystick_test/CHOSEN_Y_reg[1]_rep__0            |               25 |             30 |         1.20 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_15                                | joystick_test/Y_COORD_reg[1]_144                |               25 |             30 |         1.20 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_50                                | joystick_test/Y_COORD_reg[1]_80                 |               12 |             30 |         2.50 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_141                               | joystick_test/trigger_button_reg_20             |               13 |             31 |         2.38 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_51                                |                                                 |               26 |             31 |         1.19 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_12                                | joystick_test/TURN_reg_18                       |               22 |             31 |         1.41 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_107                               | joystick_test/TURN_reg_96                       |               16 |             31 |         1.94 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_124                               | joystick_test/TURN_reg_129                      |               13 |             31 |         2.38 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_13                                | joystick_test/TURN_reg_16                       |               21 |             31 |         1.48 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg                                   |                                                 |               21 |             31 |         1.48 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_1                                 | joystick_test/TURN_reg_195                      |               13 |             31 |         2.38 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_113                               | joystick_test/Y_COORD_reg[1]_176                |               29 |             31 |         1.07 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_17                      | joystick_test/TURN_reg_147                      |               14 |             31 |         2.21 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_0                                 | joystick_test/TURN_reg_194                      |               21 |             31 |         1.48 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_15                      | joystick_test/trigger_button_reg_14             |               12 |             31 |         2.58 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_2                                 | joystick_test/TURN_reg_196                      |               11 |             31 |         2.82 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_3                                 | joystick_test/TURN_reg_220                      |               24 |             31 |         1.29 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_76                                | joystick_test/TURN_reg_181                      |               29 |             31 |         1.07 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_52                                |                                                 |               18 |             31 |         1.72 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_6                                 |                                                 |               20 |             31 |         1.55 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_56                                | joystick_test/CHOSEN_X_reg[3]_0                 |               23 |             31 |         1.35 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_59                                | joystick_test/trigger_button_reg_6              |               22 |             31 |         1.41 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_7                                 | joystick_test/TURN_reg_396                      |               24 |             31 |         1.29 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_53                                |                                                 |               24 |             31 |         1.29 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_49                                |                                                 |               26 |             31 |         1.19 |
+|  clk10Hz_BUFG                      | joystick_test/CHOSEN_Y_reg[20]                           | joystick_test/TURN_reg_215                      |               22 |             31 |         1.41 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_54                                |                                                 |               24 |             31 |         1.29 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_55                                |                                                 |               25 |             31 |         1.24 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_57                                | joystick_test/TURN_reg_82                       |               15 |             31 |         2.07 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_72[0]                             |                                                 |               19 |             32 |         1.68 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_60[0]                             |                                                 |               22 |             32 |         1.45 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_70[0]                             |                                                 |               23 |             32 |         1.39 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_78[0]                             |                                                 |               25 |             32 |         1.28 |
+|  clk10Hz_BUFG                      | joystick_test/X_COORD_reg[2]_135[0]                      |                                                 |               27 |             32 |         1.19 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_12[0]                   |                                                 |               24 |             32 |         1.33 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_22[0]                   |                                                 |               27 |             32 |         1.19 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_2[0]                    |                                                 |               24 |             32 |         1.33 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_7[0]                    |                                                 |               26 |             32 |         1.23 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_5[0]                    |                                                 |               26 |             32 |         1.23 |
+|  clk10Hz_BUFG                      | joystick_test/CHOSEN_Y_reg[1]_rep__0_1[0]                |                                                 |               23 |             32 |         1.39 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_4                       | joystick_test/TURN_reg_208                      |               17 |             32 |         1.88 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_3                       | joystick_test/TURN_reg_212                      |               22 |             32 |         1.45 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_24                      | joystick_test/TURN_reg_214                      |               27 |             32 |         1.19 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_10                      | joystick_test/TURN_reg_385                      |               19 |             32 |         1.68 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_8                       | joystick_test/TURN_reg_387                      |               21 |             32 |         1.52 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_23                      | joystick_test/TURN_reg_390                      |               22 |             32 |         1.45 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_18                      |                                                 |               23 |             32 |         1.39 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_11                      | joystick_test/TURN_reg_384                      |               23 |             32 |         1.39 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_16                      | joystick_test/TURN_reg_207                      |               17 |             32 |         1.88 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_0                       | joystick_test/CHOSEN_Y_reg[31]                  |               14 |             32 |         2.29 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_1                       | joystick_test/TURN_reg_398                      |               24 |             32 |         1.33 |
+|  clk10Hz_BUFG                      | joystick_test/CHOSEN_X_reg[1]_rep__3_0[0]                |                                                 |               22 |             32 |         1.45 |
+|  clk10Hz_BUFG                      | joystick_test/CHOSEN_X_reg[2]_rep__1_98[0]               |                                                 |               26 |             32 |         1.23 |
+|  clk10Hz_BUFG                      | joystick_test/Y_COORD_reg[2]_rep__2_4                    | joystick_test/TURN_reg_202                      |               18 |             32 |         1.78 |
+|  clk10Hz_BUFG                      | joystick_test/MOVE_X0                                    |                                                 |                8 |             32 |         4.00 |
+|  clk10Hz_BUFG                      | joystick_test/MOVE_Y0                                    |                                                 |                8 |             32 |         4.00 |
+|  clk10Hz_BUFG                      | joystick_test/SELECT_MODE0                               |                                                 |                8 |             32 |         4.00 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_101                               | joystick_test/TURN_reg_185                      |               24 |             32 |         1.33 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_138                               | joystick_test/TURN_reg_391                      |               14 |             32 |         2.29 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_126[0]                            |                                                 |               20 |             32 |         1.60 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_140                               | joystick_test/TURN_reg_393                      |               26 |             32 |         1.23 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_142                               | joystick_test/TURN_reg_130                      |               14 |             32 |         2.29 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_143                               | joystick_test/TURN_reg_392                      |               27 |             32 |         1.19 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_144                               | joystick_test/TURN_reg_197                      |               13 |             32 |         2.46 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_145                               | joystick_test/TURN_reg_131                      |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG                     |                                                          | comp_clk50MHz/pulse                             |                9 |             32 |         3.56 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_106                               | joystick_test/TURN_reg_187                      |               21 |             32 |         1.52 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_146                               | joystick_test/TURN_reg_135                      |               15 |             32 |         2.13 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_123                               | joystick_test/TURN_reg_198                      |               21 |             32 |         1.52 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_103                               | joystick_test/TURN_reg_186                      |               22 |             32 |         1.45 |
+|  clk_IBUF_BUFG                     |                                                          | comp_clk10Hz/p_0_in                             |                9 |             32 |         3.56 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_102                               | joystick_test/TURN_reg_389                      |               20 |             32 |         1.60 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_121                               | joystick_test/TURN_reg_209                      |               22 |             32 |         1.45 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_116                               |                                                 |               26 |             32 |         1.23 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_137                               | joystick_test/Y_COORD_reg[1]_143                |               24 |             32 |         1.33 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_139                               | joystick_test/TURN_reg_380                      |               13 |             32 |         2.46 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_112                               | joystick_test/TURN_reg_383                      |               22 |             32 |         1.45 |
+|  clk_IBUF_BUFG                     |                                                          | comp_ssd_ctrl/comp_clk100Hz/p_0_in              |                8 |             32 |         4.00 |
+|  clk50MHz_BUFG                     |                                                          | vga_display/hcount[31]_i_1_n_0                  |                9 |             32 |         3.56 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_109                               | joystick_test/TURN_reg_188                      |               20 |             32 |         1.60 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_111                               | joystick_test/TURN_reg_388                      |               19 |             32 |         1.68 |
+|  clk50MHz_BUFG                     | vga_display/vcount                                       | vga_display/vcount[31]_i_1_n_0                  |                9 |             32 |         3.56 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_110[0]                            |                                                 |               24 |             32 |         1.33 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_117[0]                            |                                                 |               27 |             32 |         1.19 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_136                               | joystick_test/TURN_reg_219                      |               23 |             32 |         1.39 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_115[0]                            |                                                 |               27 |             32 |         1.19 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_105[0]                            |                                                 |               24 |             32 |         1.33 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_114[0]                            |                                                 |               24 |             32 |         1.33 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_183                               |                                                 |               27 |             32 |         1.19 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_120[0]                            |                                                 |               26 |             32 |         1.23 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_122[0]                            |                                                 |               21 |             32 |         1.52 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_104[0]                            |                                                 |               20 |             32 |         1.60 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_182                               | joystick_test/TURN_reg_193                      |               28 |             32 |         1.14 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_17                                | joystick_test/CHOSEN_X_reg[0]_rep__5_0          |               20 |             32 |         1.60 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_108[0]                            |                                                 |               22 |             32 |         1.45 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_75                                | joystick_test/TURN_reg_217                      |               20 |             32 |         1.60 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_118[0]                            |                                                 |               23 |             32 |         1.39 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_77                                | joystick_test/TURN_reg_179                      |               27 |             32 |         1.19 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_79                                | joystick_test/TURN_reg_180                      |               29 |             32 |         1.10 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_81                                | joystick_test/TURN_reg_395                      |               29 |             32 |         1.10 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_119[0]                            |                                                 |               27 |             32 |         1.19 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_125[0]                            |                                                 |               23 |             32 |         1.39 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_83                                | joystick_test/TURN_reg_206                      |               23 |             32 |         1.39 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_85                                | joystick_test/TURN_reg_394                      |               18 |             32 |         1.78 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_86                                | joystick_test/TURN_reg_204                      |               20 |             32 |         1.60 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_87                                | joystick_test/TURN_reg_205                      |               14 |             32 |         2.29 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_88                                | joystick_test/TURN_reg_210                      |               24 |             32 |         1.33 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_68                                | joystick_test/TURN_reg_211                      |               24 |             32 |         1.33 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_84                                | joystick_test/TURN_reg_200                      |               21 |             32 |         1.52 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_89                                | joystick_test/TURN_reg_213                      |               20 |             32 |         1.60 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_9                                 | joystick_test/TURN_reg_8                        |               25 |             32 |         1.28 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_65[0]                             |                                                 |               24 |             32 |         1.33 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_69[0]                             |                                                 |               27 |             32 |         1.19 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_67[0]                             |                                                 |               26 |             32 |         1.23 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_4                                 | joystick_test/CHOSEN_X_reg[12]_0                |               13 |             32 |         2.46 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_9                       | joystick_test/TURN_reg_386                      |               17 |             32 |         1.88 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_71[0]                             |                                                 |               24 |             32 |         1.33 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_58                                | joystick_test/TURN_reg_218                      |               14 |             32 |         2.29 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_61                                | joystick_test/TURN_reg_189                      |               23 |             32 |         1.39 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_63                                | joystick_test/TURN_reg_190                      |               25 |             32 |         1.28 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_73                                | joystick_test/TURN_reg_397                      |               24 |             32 |         1.33 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_66[0]                             |                                                 |               30 |             32 |         1.07 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_97[0]                             |                                                 |               23 |             32 |         1.39 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_74                                | joystick_test/TURN_reg_203                      |               26 |             32 |         1.23 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_80[0]                             |                                                 |               26 |             32 |         1.23 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_62[0]                             |                                                 |               21 |             32 |         1.52 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_64[0]                             |                                                 |               25 |             32 |         1.28 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_94                                |                                                 |               25 |             32 |         1.28 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_90                                | joystick_test/TURN_reg_201                      |               27 |             32 |         1.19 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_93                                | joystick_test/TURN_reg_199                      |               20 |             32 |         1.60 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_91                                | joystick_test/TURN_reg_192                      |               12 |             32 |         2.67 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_99                                | joystick_test/TURN_reg_382                      |               26 |             32 |         1.23 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_95                                | joystick_test/TURN_reg_381                      |               12 |             32 |         2.67 |
+|  clk10Hz_BUFG                      | joystick_test/TURN_reg_92                                | joystick_test/TURN_reg_216                      |               24 |             32 |         1.33 |
+|  clk10Hz_BUFG                      |                                                          |                                                 |               36 |             46 |         1.28 |
+|  clk10Hz_BUFG                      | vga_display/MOVE_X2                                      |                                                 |               31 |             70 |         2.26 |
+|  clk10Hz_BUFG                      | joystick_test/trigger_button_reg_19                      | joystick_test/whites_reg[11]                    |               85 |            169 |         1.99 |
++------------------------------------+----------------------------------------------------------+-------------------------------------------------+------------------+----------------+--------------+
+
+

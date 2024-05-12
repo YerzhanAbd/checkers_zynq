@@ -66,7 +66,7 @@ architecture vga_driver_arch of vga_driver is
     signal X_COORD: integer := 0;
     signal Y_COORD: integer := 0;
     signal SQUARE_COLOR: integer;
-    constant PIECE_RADIUS : integer := 225;
+    constant PIECE_RADIUS : integer := 400;
     
     
     signal MENU_CHOOSE: std_logic := '0';
@@ -181,8 +181,8 @@ begin
                         green <= "1111";
                         blue <= "1111";
                     else
-                        piece_h := hcount - (H_INNER_TOP_LEFT + X_COORD * 60 + 25);
-                        piece_v := vcount - (V_INNER_TOP_LEFT + Y_COORD * 60 + 25);
+                        piece_h := hcount - (H_INNER_TOP_LEFT + X_COORD * 60 + 30);
+                        piece_v := vcount - (V_INNER_TOP_LEFT + Y_COORD * 60 + 30);
                         round_distance := piece_h * piece_h + piece_v * piece_v;
                         if (round_distance <= PIECE_RADIUS) then 
                             
@@ -190,9 +190,9 @@ begin
                                 red <= "1111";
                                 green <= "1111";
                                 blue <= "1111";
-                                if ((white_pieces(Y_COORD, X_COORD) = 2) and ((hcount >= H_INNER_TOP_LEFT + X_COORD * 60 + 18) and (hcount < H_INNER_TOP_LEFT + X_COORD * 60 + 33)) and ((vcount >= Y_COORD * 60 + V_INNER_TOP_LEFT + 18) and (vcount < V_INNER_TOP_LEFT + Y_COORD * 60 + 33))) then 
-                                    king_h := (hcount - H_INNER_TOP_LEFT - X_COORD * 60 - 18) / 3;
-                                    king_v := (vcount - V_INNER_TOP_LEFT - Y_COORD * 60 - 18) / 3;
+                                if ((white_pieces(Y_COORD, X_COORD) = 2) and ((hcount >= H_INNER_TOP_LEFT + X_COORD * 60 + 23) and (hcount < H_INNER_TOP_LEFT + X_COORD * 60 + 38)) and ((vcount >= Y_COORD * 60 + V_INNER_TOP_LEFT + 23) and (vcount < V_INNER_TOP_LEFT + Y_COORD * 60 + 38))) then 
+                                    king_h := (hcount - H_INNER_TOP_LEFT - X_COORD * 60 - 23) / 3;
+                                    king_v := (vcount - V_INNER_TOP_LEFT - Y_COORD * 60 - 23) / 3;
                                     
                                     if ((king_h + king_v) = 4) or (king_h = king_v) then
                                         red <= "0000";
@@ -205,9 +205,9 @@ begin
                                 red <= "0000";
                                 green <= "0000";
                                 blue <= "0000";
-                                if ((black_pieces(Y_COORD, X_COORD) = 2) and ((hcount >= H_INNER_TOP_LEFT + X_COORD * 60 + 18) and (hcount < H_INNER_TOP_LEFT + X_COORD * 60 + 33)) and ((vcount >= Y_COORD * 60 + V_INNER_TOP_LEFT + 18) and (vcount < V_INNER_TOP_LEFT + Y_COORD * 60 + 33))) then 
-                                    king_h := (hcount - H_INNER_TOP_LEFT - X_COORD * 60 - 18) / 3;
-                                    king_v := (vcount - V_INNER_TOP_LEFT - Y_COORD * 60 - 18) / 3;
+                                if ((black_pieces(Y_COORD, X_COORD) = 2) and ((hcount >= H_INNER_TOP_LEFT + X_COORD * 60 + 23) and (hcount < H_INNER_TOP_LEFT + X_COORD * 60 + 38)) and ((vcount >= Y_COORD * 60 + V_INNER_TOP_LEFT + 23) and (vcount < V_INNER_TOP_LEFT + Y_COORD * 60 + 38))) then 
+                                    king_h := (hcount - H_INNER_TOP_LEFT - X_COORD * 60 - 23) / 3;
+                                    king_v := (vcount - V_INNER_TOP_LEFT - Y_COORD * 60 - 23) / 3;
                                     
                                     if ((king_h + king_v) = 4) or (king_h = king_v) then
                                         red <= "1111";

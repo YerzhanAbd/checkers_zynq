@@ -7,6 +7,7 @@ package boardPckg is
     type pieces is array (0 to 7,0 to 7) of integer;
     type TOP_PIXELS is array (0 to 6, 0 to 59) of std_logic;
     type BUTTON_PIXELS is array (0 to 8, 0 to 29) of std_logic;
+    
     constant NEW_GAME : TOP_PIXELS := (
     "000000100010111101000100010000001100000110100000101111000000",
     "000000100010100001000100010000010010001010100000101000000000",

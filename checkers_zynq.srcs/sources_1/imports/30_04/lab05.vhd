@@ -101,29 +101,6 @@ architecture Behavioral of project is
     signal SELECT_MODE : integer := 0; 
     signal winner : integer := -1; 
     signal BOARD_SIZE: integer := 7;
-
---   signal black_pieces : pieces := (
---   (0, 1, 0, 1, 0, 1, 0, 1),
---   (1, 0, 1, 0, 1, 0, 1, 0),
---   (0, 2, 0, 2, 0, 2, 0, 2),
---   (0, 0, 0, 0, 0, 0, 0, 0),
---   (0, 0, 0, 0, 0, 0, 0, 0),
---   (0, 0, 0, 0, 0, 0, 0, 0),
---   (0, 0, 0, 0, 0, 0, 0, 0),
---   (0, 0, 0, 0, 0, 0, 0, 0)
---   );
-   
---   signal white_pieces : pieces := (
---   (0, 0, 0, 0, 0, 0, 0, 0),
---   (0, 0, 0, 0, 0, 0, 0, 0),
---   (0, 0, 0, 0, 0, 0, 0, 0),
---   (0, 0, 0, 0, 0, 0, 0, 0),
---   (0, 0, 0, 0, 0, 0, 0, 0),
---   (2, 0, 2, 0, 2, 0, 2, 0),
---   (0, 2, 0, 2, 0, 2, 0, 2),
---   (2, 0, 2, 0, 2, 0, 2, 0)
---   );
-
     
    signal blacks: integer := 2;
    signal whites: integer := 2;
@@ -131,7 +108,7 @@ architecture Behavioral of project is
    signal black_pieces: pieces  := (
    (0, 1, 0, 1, 0, 1, 0, 1),
    (1, 0, 1, 0, 1, 0, 1, 0),
-   (0, 1, 0, 1, 0, 1, 0, 1),
+   (0, 1, 0, 1, 0, 1, 0, 2),
    (0, 0, 0, 0, 0, 0, 0, 0),
    (0, 0, 0, 0, 0, 0, 0, 0),
    (0, 0, 0, 0, 0, 0, 0, 0),
@@ -145,7 +122,7 @@ architecture Behavioral of project is
    (0, 0, 0, 0, 0, 0, 0, 0),
    (0, 0, 0, 0, 0, 0, 0, 0),
    (0, 0, 0, 0, 0, 0, 0, 0),
-   (1, 0, 1, 0, 1, 0, 1, 0),
+   (2, 0, 1, 0, 1, 0, 1, 0),
    (0, 1, 0, 1, 0, 1, 0, 1),
    (1, 0, 1, 0, 1, 0, 1, 0)
    );
@@ -154,7 +131,7 @@ architecture Behavioral of project is
     "00000000", "00000000", "00000000", "00000000");
    signal number_of_legal_moves: integer := 0;
    
-   signal STATE: integer := 1;
+   signal STATE: integer := 4;
     
      
 begin
@@ -164,7 +141,7 @@ begin
     -- State 2 -> The piece is chosen, make a move, OR move around the board and choose another piece
     -- State 3 -> Multiple captures. Capture multiple pieces. ONLY capturing moves accepted.
     --            If there are no pieces to capture, the turn is passed to another player
-    -- State 4 -> Start new game
+    -- State 4 -> Start new game. Wait for user input to choose Ai vs PvP
     -- State 5 -> Re-initializing board
     get_coords: process(clk10Hz)
     begin
